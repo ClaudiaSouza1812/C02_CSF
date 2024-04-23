@@ -1,0 +1,10 @@
+﻿
+
+--------------------------------------------
+1. algoritmo da média aritmética (2 valores)
+--------------------------------------------
+
+1. ler os 2 valores (entrada)
+2. Calcular a média (Processamento)
+3. Mostrar a média (saída)
+
