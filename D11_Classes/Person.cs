@@ -15,6 +15,7 @@
 
  */
 using D00_Utility;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,7 +95,7 @@ namespace D11_Classes
             Country = string.Empty;
         }
 
-        public Person(int id, string name, string nif, string phone, string address, string city = "", string country = "")
+        public Person(int id, string name, string nif, string phone, string address, string city, string country)
         {
             Id = id;
             Name = name;
@@ -131,6 +132,37 @@ namespace D11_Classes
 
         // fazer o método person read data (inserção das informações pelo usuário através do console)
 
+        /* Milena's version
+        public void PersonReadData()
+        {
+            Utility.WriteTitle("Person - read", "\n", "\n\n");
+
+            Utility.WriteMessage($"Person Id: ");
+            Id = Convert.ToInt16(Console.ReadLine());
+
+            Utility.WriteMessage($"Person Name: ");
+            Name = Console.ReadLine();
+
+            Utility.WriteMessage($"Person NIF: ");
+            NIF = Console.ReadLine();
+
+            Utility.WriteMessage($"Person Phone: ");
+            Phone = Console.ReadLine();
+
+            Utility.WriteMessage($"Person Address: ");
+            Address = Console.ReadLine();
+
+            Utility.WriteMessage($"Person City: ");
+            City = Console.ReadLine();
+
+            Utility.WriteMessage($"Person Country: ");
+            Country = Console.ReadLine();
+
+        }
+        */
+            
+
+        // My version
         public void PersonReadData()
         {
             // Display the title
@@ -138,19 +170,16 @@ namespace D11_Classes
 
             // Declare needed variables
             bool status;
-            bool status02;
             int number;
-            char symbol;
             string input;
             string[] properties = { "Id", "Name", "NIF", "Phone", "Address", "City", "Country" };
             string[] userData = { };
 
-            // Ask user for the data
-
+            // Ask user for the data and make the data types verifications
 
             for (int i = 0; i < properties.Length; i++)
             {
-                Utility.WriteMessage($"Person {i}: ");
+                Utility.WriteMessage($"Person {properties[i]}: ");
                 input = Console.ReadLine();
 
                 if (i == 0 || i == 2 || i == 3)
@@ -158,8 +187,8 @@ namespace D11_Classes
                     status = int.TryParse(input, out number);
                     while (status == false)
                     {
-                        Utility.WriteMessage($"Você digitou '{input}', entre um {i} numérico.", "\n", "\n");
-                        Utility.WriteMessage($"Person {i}: ");
+                        Utility.WriteMessage($"Você digitou '{input}', entre um {properties[i]} numérico.", "\n", "\n");
+                        Utility.WriteMessage($"Person {properties[i]}: ");
                         input = Console.ReadLine();
                         status = int.TryParse(input, out number);
                     }
@@ -168,48 +197,48 @@ namespace D11_Classes
                 else if (i == 1 || i == 5 || i == 6)
                 {
                     status = false;
-                    while (status == false)
+                    while (status == false || string.IsNullOrWhiteSpace(input))
                     {
                         foreach (char item in input)
                         {
-                            if (char.IsLetterOrDigit(item))
+                            if (char.IsLetter(item))
                             {
                                 status = true;
                                 continue;
                             }
                             else
                             {
-                                Utility.WriteMessage($"Você digitou '{input}', entre um {i} alfanumérico.", "\n", "\n");
+                                Utility.WriteMessage($"Você digitou '{input}', entre um {properties[i]} alfabético.", "\n", "\n");
                                 status = false;
-                                Utility.WriteMessage($"Person {i}: ");
+                                Utility.WriteMessage($"Person {properties[i]}: ");
                                 input = Console.ReadLine();
                                 break;
                             }
                         }
-                        
                     }
-
-                    while (string.IsNullOrWhiteSpace(input))
-                    {
-                        Utility.WriteMessage($"Você digitou '{input}', entre um {i} alfanumérico.", "\n", "\n");
-                        Utility.WriteMessage($"Person {i}: ");
-                        input = Console.ReadLine();
-                    }
+                    userData.Append(input);
                 }
-                else
+                else 
                 {
-                    Utility.WriteMessage($"Person {i}: ");
-                    input = Console.ReadLine();
+                    userData.Append(input);
                 }
 
-                Id = Convert.ToInt16(Console.ReadLine());
-
+                
             }
-            
 
-            // Make data types verifications
+            Id = Convert.ToInt16(userData[0]);
+            Name = userData[1];
+            NIF = userData[2];
+            Phone = userData[3];
+            Address = userData[4];
+            City = userData[5];
+            Country = userData[6];
+            
             
         }
+         
+         
+
 
         /* Dinamically version
          public void PersonReadData(Person person)

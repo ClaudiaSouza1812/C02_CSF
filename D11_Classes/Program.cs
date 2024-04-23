@@ -35,12 +35,17 @@ namespace D11_Classes
 
             Person person03 = new Person(3, "Claudia", "987654321", "987654321", "Praceta Garcia, 2b", "Coimbra", "Portugal");
 
+            // 4. Pedir os dados da pessoa
+
             Person person04 = new Person();
 
-            // 4. Usar os métodos
+            
+
+
+            // 5. Usar os métodos
 
             person04.PersonReadData();
-            person01.PersonWriteData();
+            person04.PersonWriteData();
             Utility.TerminateConsole();
         }
     }
