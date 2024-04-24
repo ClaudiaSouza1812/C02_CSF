@@ -11,6 +11,7 @@ namespace E06_Calculadora_v02_ComClasses
     {
         static void Main(string[] args)
         {
+            Utility.SetUnicodeConsole();
             #region Variáveis
 
             #endregion
@@ -28,7 +29,14 @@ namespace E06_Calculadora_v02_ComClasses
             #endregion
 
             #region Mostrar o resultado
+            Calculator calc01 = new Calculator(5, 2, "/");
+            Calculator calc02 = new Calculator();
 
+            
+            calc01.CalculatorWriteResult();
+            //calc02.CalculatorReadData();
+
+            Utility.TerminateConsole();
             #endregion
         }
     }

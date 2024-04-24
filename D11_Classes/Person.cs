@@ -162,7 +162,7 @@ namespace D11_Classes
         */
 
 
-        // Version with data checking 
+        // Version with data type checking 
         public void PersonReadData()
         {
             // Display the title
