@@ -160,9 +160,9 @@ namespace D11_Classes
 
         }
         */
-            
 
-        // My version
+
+        // Version with data checking 
         public void PersonReadData()
         {
             // Display the title
@@ -231,18 +231,19 @@ namespace D11_Classes
             City = userData[5];
             Country = userData[6];
         }
-         
-        /* Dinamically version
+
+        /* Dynamic version
          public void PersonReadData(Person person)
         {
             Utility.WriteTitle("Set the new Person properties", "", "\n\n");
 
+            string userData;
             PropertyInfo[] properties = typeof(Person).GetProperties();
 
             for (int i = 0; i < properties.Length; i++)
             {
                 Utility.WriteMessage($"Enter {properties[i].Name}: ");
-                string userInput = Console.ReadLine();
+                userData = Console.ReadLine();
 
                 properties[i].SetValue(person, Convert.ChangeType(userInput, properties[i].PropertyType));
             }
