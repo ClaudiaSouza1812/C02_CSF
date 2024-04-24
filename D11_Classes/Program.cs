@@ -40,8 +40,6 @@ namespace D11_Classes
             Person person04 = new Person();
 
             
-
-
             // 5. Usar os métodos
 
             person04.PersonReadData();

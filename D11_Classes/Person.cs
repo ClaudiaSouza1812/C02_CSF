@@ -173,7 +173,7 @@ namespace D11_Classes
             int number;
             string input;
             string[] properties = { "Id", "Name", "NIF", "Phone", "Address", "City", "Country" };
-            string[] userData = { };
+            string[] userData = new string[properties.Length];
 
             // Ask user for the data and make the data types verifications
 
@@ -192,7 +192,7 @@ namespace D11_Classes
                         input = Console.ReadLine();
                         status = int.TryParse(input, out number);
                     }
-                    userData.Append(input);
+                    userData[i] = input;
                 }
                 else if (i == 1 || i == 5 || i == 6)
                 {
@@ -216,16 +216,13 @@ namespace D11_Classes
                             }
                         }
                     }
-                    userData.Append(input);
+                    userData[i] = input;
                 }
                 else 
                 {
-                    userData.Append(input);
+                    userData[i] = input;
                 }
-
-                
             }
-
             Id = Convert.ToInt16(userData[0]);
             Name = userData[1];
             NIF = userData[2];
@@ -233,13 +230,8 @@ namespace D11_Classes
             Address = userData[4];
             City = userData[5];
             Country = userData[6];
-            
-            
         }
          
-         
-
-
         /* Dinamically version
          public void PersonReadData(Person person)
         {
