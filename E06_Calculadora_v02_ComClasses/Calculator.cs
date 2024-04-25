@@ -52,8 +52,8 @@ namespace E06_Calculadora_v02_ComClasses
         #endregion
 
         #region Constructors (Public)
-        
-        // 
+
+        // Substituto do default constructor
         public Calculator()
         {
             Value01 = 0;
@@ -61,6 +61,7 @@ namespace E06_Calculadora_v02_ComClasses
             Operators = string.Empty;
         }
 
+        // Segundo construtor com inserção parâmetros obrigatórios
         public Calculator(double value01, double value02, string operators)
         {
             Value01 = value01;
@@ -71,6 +72,7 @@ namespace E06_Calculadora_v02_ComClasses
 
         #region Methods (public or internal)
 
+        // Método para devolver o resultado de uma operação aritmética simples
         public double Operations(double value01, double value02, string operators)
         {
             double result;
@@ -96,6 +98,7 @@ namespace E06_Calculadora_v02_ComClasses
             return result;
         }
 
+        // Método para devolver a soma de dois valores
         public double Sum(double value01, double value02)
         {
             double result;
@@ -103,6 +106,7 @@ namespace E06_Calculadora_v02_ComClasses
             return result;
         }
 
+        // Método para devolver a subtração de dois valores
         public double Sub(double value01, double value02)
         {
             double result;
@@ -110,6 +114,7 @@ namespace E06_Calculadora_v02_ComClasses
             return result;
         }
 
+        // Método para devolver a multiplicação de dois valores
         public double Multi(double value01, double value02)
         {
             double result;
@@ -117,6 +122,7 @@ namespace E06_Calculadora_v02_ComClasses
             return result;
         }
 
+        // Método para devolver a divisão de dois valores
         public double Div(double value01, double value02)
         {
             double result;
@@ -132,8 +138,60 @@ namespace E06_Calculadora_v02_ComClasses
                 return result;
             }
         }
-        
 
+        // Método para checar e devolver um double
+        public double CheckDouble(bool status, string input, string valor)
+        {
+            double reference;
+            status = double.TryParse(input, out reference);
+            while (status == false)
+            {
+                Utility.WriteMessage($"Você digitou '{input}', entre um valor numérico.", "", "\n");
+                Utility.WriteMessage($"{valor}: ");
+                input = Console.ReadLine();
+                status = double.TryParse(input, out reference);
+            }
+
+            reference = Convert.ToDouble(input);
+            return reference;
+        }
+
+        // Método para chacar e devolver um double
+        public string CheckOperators(string input, bool status)
+        {
+            /*string[] opers = { "+", "-", "+", "/" };
+
+            foreach (var item in opers)
+            {
+                
+            }*/
+            while (status == false)
+            {
+                switch (input)
+                {
+                    case "+":
+                        status = true;
+                        break;
+                    case "-":
+                        status = true;
+                        break;
+                    case "*":
+                        status = true;
+                        break;
+                    case "/":
+                        status = true;
+                        break;
+                    default:
+                        Utility.WriteMessage($"Você digitou {input}, entre um dos 4 operadores válidos acima.", "", "\n");
+                        Utility.WriteMessage("Operador: ");
+                        input = Console.ReadLine();
+                        break;
+                }
+            }
+            return input;
+        }
+
+        // Método para mostrar no console o resultado de uma operação aritmética simples
         public void CalculatorWriteResult()
         {
             Utility.WriteTitle("Calculator - result", endTitle:"\n\n");
@@ -147,32 +205,50 @@ namespace E06_Calculadora_v02_ComClasses
             Utility.WriteMessage($"Resultado: {Value01} {Operators} {Value02} = {result}", endMessage: "\n");
         }
 
+        // Método para mostrar no console o resultado de uma operação aritmética simples
+        public void CalculatorWriteResult(double value01, double value02, string operators)
+        {
+            Utility.WriteTitle("Calculator - result", "\n", "\n\n");
+
+            double result;
+
+            Utility.WriteMessage($"Você inseriu os valores ({value01}), ({value02}) e o operador ({operators}).", endMessage: "\n\n");
+
+            result = Operations(value01, value02, operators);
+
+            Utility.WriteMessage($"Resultado: {value01} {operators} {value02} = {result}", endMessage: "\n");
+        }
+
+        // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
         public void CalculatorReadData()
         {
             Utility.WriteTitle("Calculator - set the new calculation data", endTitle: "\n\n");
+
+            bool status = false;
+            string input;
+            string valor = "Primeiro valor";
 
             Utility.WriteMessage("Insira os 2 valores desejados e um dos seguintes operadores: ", endMessage: "\n\n");
 
             Utility.WriteMessage("Soma: \"+\"\nSubtração: \"-\"\nMultiplicação: \"*\"\nDivisão: \"/\"\nResultado: \"=\"\n", endMessage: "\n");
 
-            Utility.WriteMessage("Primeiro valor: ");
-            Value01 = Convert.ToDouble(Console.ReadLine());
+            Utility.WriteMessage($"{valor}: ");
+            input = Console.ReadLine();
 
-            /*status = int.TryParse(input, out number);
-            while (status == false)
-            {
-                Utility.WriteMessage($"Você digitou '{input}', entre um {properties[i]} numérico.", "\n", "\n");
-                Utility.WriteMessage($"Person {properties[i]}: ");
-                input = Console.ReadLine();
-                status = int.TryParse(input, out number);*/
+            Value01 = CheckDouble(status, input, valor);
 
-                Utility.WriteMessage("Segundo valor: ");
-            Value02 = Convert.ToDouble(Console.ReadLine());
+            valor = "Segundo valor";
+            Utility.WriteMessage($"{valor}: ");
+            input = Console.ReadLine();
+
+            Value02 = CheckDouble(status, input, valor);
 
             Utility.WriteMessage("Operador: ");
-            Operators = Console.ReadLine();
+            input = Console.ReadLine();
 
+            Operators = CheckOperators(input, status);
 
+            CalculatorWriteResult(Value01, Value02, Operators);
         }
 
         #endregion

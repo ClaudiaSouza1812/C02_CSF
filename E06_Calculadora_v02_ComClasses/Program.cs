@@ -33,8 +33,8 @@ namespace E06_Calculadora_v02_ComClasses
             Calculator calc02 = new Calculator();
 
             
-            calc01.CalculatorWriteResult();
-            //calc02.CalculatorReadData();
+            //calc01.CalculatorWriteResult();
+            calc02.CalculatorReadData();
 
             Utility.TerminateConsole();
             #endregion
