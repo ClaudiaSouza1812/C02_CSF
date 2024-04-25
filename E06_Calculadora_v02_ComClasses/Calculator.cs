@@ -12,89 +12,48 @@ namespace E06_Calculadora_v02_ComClasses
     {
         #region Fields (properties, private variables)
 
-        // variáveis internas da classe para serem usadas dentro das propriedades
-
-        /* Example:
-        private string address, city, country;
-        */
+        // variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
 
         private double value01, value02;
-        private string operators;
-
+        
         #endregion
 
         #region Properties (public or internal)
 
         #region Auto-implemented properties 2.0
 
-        // example:
-        // public int Id { get; set; }
-
-        public double Value01 { get; set; }
-        public double Value02 { get; set; }
+        // Declarar uma propriedade usando Auto-implemented properties
         public string Operators { get; set; }
-        
 
         #endregion
 
         #region Classic properties 1.0
 
-        /* example
-         public string City
+        // Declarar uma propriedade usando Classic properties
+        public double Value01
         {
-            get { return city; }          // Ler o valor da propriedade
-            set { city = value; }         // escrever o valor da propriedade
+            get { return value01; }     // Ler o valor da propriedade
+            set { value01 = value; }    // escrever o valor da propriedade
         }
-
-        City = "teste";         // set
-        Console.Write(City);    // get
-        */
-
 
         #endregion
 
         #region Bodied-expression properties 3.0
 
-        /* Example
-         public string Country
+        // Declarar uma propriedade usando Bodied-expression properties
+        public double Value02
         {
-            get => country;             // => lambda operator
-            set => country = value;
+            get => value02;         // => lambda operator
+            set => value02 = value;
         }
-        */
-
 
         #endregion
 
         #endregion
 
         #region Constructors (Public)
-
-
-        /* Examples
-        // Substituto do default constructor
-        public Person()
-        {
-            Id = 0;
-            Name = string.Empty;
-            NIF = string.Empty;
-            Phone = "";
-            Address = string.Empty;
-            City = "";
-            Country = string.Empty;
-        }
-
-        public Person(int id, string name, string nif, string phone, string address, string city, string country)
-        {
-            Id = id;
-            Name = name;
-            NIF = nif;
-            Phone = phone;
-            Address = address;
-            City = city;
-            Country = country;
-        }
-         */
+        
+        // 
         public Calculator()
         {
             Value01 = 0;
@@ -111,21 +70,6 @@ namespace E06_Calculadora_v02_ComClasses
         #endregion
 
         #region Methods (public or internal)
-
-        /* Example
-         public void PersonWriteData()
-        {
-            Utility.WriteTitle("Person - list", "\n", "\n\n");
-
-            Utility.WriteMessage($"Person Id: {Id}", "", "\n");
-            Utility.WriteMessage($"Person Name: {Name}", "", "\n");
-            Utility.WriteMessage($"Person NIF: {NIF}", "", "\n");
-            Utility.WriteMessage($"Person Phone: {Phone}", "", "\n");
-            Utility.WriteMessage($"Person Address: {Address}", "", "\n");
-            Utility.WriteMessage($"Person City: {City}", "", "\n");
-            Utility.WriteMessage($"Person Country: {Country}", "", "\n");
-        }
-        */
 
         public double Operations(double value01, double value02, string operators)
         {
@@ -185,7 +129,7 @@ namespace E06_Calculadora_v02_ComClasses
             }
             else
             {
-                return 0;
+                return result;
             }
         }
         

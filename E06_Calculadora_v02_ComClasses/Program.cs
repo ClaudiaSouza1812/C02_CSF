@@ -29,7 +29,7 @@ namespace E06_Calculadora_v02_ComClasses
             #endregion
 
             #region Mostrar o resultado
-            Calculator calc01 = new Calculator(5, 2, "/");
+            Calculator calc01 = new Calculator(2, 5, "/");
             Calculator calc02 = new Calculator();
 
             

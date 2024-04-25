@@ -132,7 +132,7 @@ namespace D11_Classes
 
         // fazer o método person read data (inserção das informações pelo usuário através do console)
 
-        /* Milena's version
+        /* Version without checking
         public void PersonReadData()
         {
             Utility.WriteTitle("Person - read", "\n", "\n\n");
