@@ -159,7 +159,8 @@ namespace E06_Calculadora_v02_ComClasses
         // Método para chacar e devolver um double
         public string CheckOperators(string input, bool status)
         {
-            /*string[] opers = { "+", "-", "+", "/" };
+            /*tentar foreach
+             * string[] opers = { "+", "-", "+", "/" };
 
             foreach (var item in opers)
             {
