@@ -21,9 +21,12 @@ namespace E07_AreaRetangulo_v01
 
             Area area02 = new Area(6.5, 12.5);
 
+            Area area03 = new Area();
 
-            area01.AreaWriteResult();
-            area02.AreaWriteResult();
+            area03.AreaReadData();
+
+            //area01.AreaWriteResult();
+            //area02.AreaWriteResult();
 
             Utility.TerminateConsole();
         }
