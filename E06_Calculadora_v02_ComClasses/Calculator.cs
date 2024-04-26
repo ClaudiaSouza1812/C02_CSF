@@ -140,7 +140,7 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Método para checar e devolver um double
-        public double CheckDouble(bool status, string input, string valor)
+        internal double CheckDouble(bool status, string input, string valor)
         {
             double reference;
             status = double.TryParse(input, out reference);
@@ -157,7 +157,7 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Método para checar e devolver um operador
-        public string CheckOperators(string input, bool status)
+        internal string CheckOperators(string input, bool status)
         {
             /*tentar foreach
              * string[] opers = { "+", "-", "+", "/" };
@@ -231,7 +231,7 @@ namespace E06_Calculadora_v02_ComClasses
 
             Utility.WriteMessage("Insira os 2 valores desejados e um dos seguintes operadores: ", endMessage: "\n\n");
 
-            Utility.WriteMessage("Soma: \"+\"\nSubtração: \"-\"\nMultiplicação: \"*\"\nDivisão: \"/\"\nResultado: \"=\"\n", endMessage: "\n");
+            Utility.WriteMessage("Soma: \"+\"\nSubtração: \"-\"\nMultiplicação: \"*\"\nDivisão: \"/\"\n", endMessage: "\n");
 
             Utility.WriteMessage($"{valor}: ");
             input = Console.ReadLine();
