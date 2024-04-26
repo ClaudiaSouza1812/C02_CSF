@@ -13,19 +13,17 @@ namespace E07_AreaRetangulo_v01
         {
             Utility.SetUnicodeConsole();
 
-            Utility.WriteTitle("Apresentar a área de um retângulo a partir de dois valores (altura e largura).", endTitle: "\n\n");
 
-            double altura, largura, area;
+            Area area01 = new Area();
+            
+            area01.Altura = 4;
+            area01.Largura = 8;
 
-            Utility.WriteMessage("Altura: ");
-            altura = Convert.ToDouble(Console.ReadLine());
+            Area area02 = new Area(6.5, 12.5);
 
-            Utility.WriteMessage("Largura: ");
-            largura = Convert.ToDouble(Console.ReadLine());
 
-            area = altura * largura;
-
-            Utility.WriteMessage($"A área é: {area}.", "\n", "\n");
+            area01.AreaWriteResult();
+            area02.AreaWriteResult();
 
             Utility.TerminateConsole();
         }
