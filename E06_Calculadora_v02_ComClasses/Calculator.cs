@@ -156,7 +156,7 @@ namespace E06_Calculadora_v02_ComClasses
             return reference;
         }
 
-        // Método para chacar e devolver um double
+        // Método para checar e devolver um operador
         public string CheckOperators(string input, bool status)
         {
             /*tentar foreach
