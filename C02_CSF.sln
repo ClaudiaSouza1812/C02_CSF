@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E07_AreaRetangulo_v01", "E0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E08_Expressoes_v01", "E08_Expressoes_v01\E08_Expressoes_v01.csproj", "{0F8AB349-ECFD-48AB-8B87-5DDB861DDB99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E09_CasasDecimais_v01", "E09_CasasDecimais_v01\E09_CasasDecimais_v01.csproj", "{5B64806B-4BEF-41C6-AE10-A22BA8ADBCD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{0F8AB349-ECFD-48AB-8B87-5DDB861DDB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F8AB349-ECFD-48AB-8B87-5DDB861DDB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F8AB349-ECFD-48AB-8B87-5DDB861DDB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B64806B-4BEF-41C6-AE10-A22BA8ADBCD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B64806B-4BEF-41C6-AE10-A22BA8ADBCD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B64806B-4BEF-41C6-AE10-A22BA8ADBCD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B64806B-4BEF-41C6-AE10-A22BA8ADBCD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
