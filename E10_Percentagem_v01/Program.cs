@@ -20,11 +20,9 @@ namespace E10_Percentagem_v01
 
             foreach (double item in values)
             {   
-
                 result = item * 100;
                 Utility.WriteMessage($"{result}%", endMessage: "\n");
             }
-
 
             Utility.TerminateConsole();
         }
