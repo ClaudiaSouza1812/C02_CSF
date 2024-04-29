@@ -66,7 +66,7 @@ namespace E08_Expressoes_v01
 
         public void ExpressionWriteResult()
         {
-            Utility.WriteTitle("Escrever um programa que apresente no ecrã o resultado de expressões dadas", "", "\n\n");
+            Utility.WriteTitle("Expressions - result", "", "\n\n");
 
             double exp01, exp02, exp03;
 
@@ -81,7 +81,22 @@ namespace E08_Expressoes_v01
 
         public void ExpressionReadData()
         {
+            Utility.WriteTitle("Escrever um programa que apresente no ecrã o resultado de expressões dadas", "", "\n\n");
 
+            double value01, value02;
+
+            Utility.WriteMessage($"Primeira expressão, soma de dois valores;", "", "\n");
+            Utility.WriteMessage($"Segunda expressão, divisão de dois valores;", "", "\n");
+            Utility.WriteMessage($"Terceira expressão, resto de dois valores;", "", "\n");
+
+            Utility.WriteMessage("Insira o primeiro valor: ", "\n");
+            value01 = Convert.ToDouble(Console.ReadLine());
+            Utility.WriteMessage("Insira o segundo valor: ");
+            value02 = Convert.ToDouble(Console.ReadLine());
+
+            Utility.WriteMessage($"Primeira expressão: {value01} + {value02} = {Sum(value01, value02)}", "\n", "\n");
+            Utility.WriteMessage($"Segunda expressão: {value01} / {value02} = {Div(value01, value02)}", "", "\n");
+            Utility.WriteMessage($"Terceira expressão: {value01} % {value02} = {Rest(value01, value02)}", "", "\n");
         }
 
         #endregion
