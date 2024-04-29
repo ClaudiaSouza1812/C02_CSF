@@ -59,7 +59,7 @@ namespace D00_Utility
         public static void TerminateConsole()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write("\nPrime qualquer tecla para terminares.");
+            Console.Write("\n\nPrime qualquer tecla para terminares.");
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
             Console.Clear();
