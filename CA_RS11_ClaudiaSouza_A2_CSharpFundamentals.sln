@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E10_Percentagem_v01", "E10_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E11_Alinhamento_CasasDecimais_v01", "E11_Alinhamento_CasasDecimais_v01\E11_Alinhamento_CasasDecimais_v01.csproj", "{FE3596D5-D187-4FCB-B700-54D35D50F694}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E12_ParteInteira_v01", "E12_ParteInteira_v01\E12_ParteInteira_v01.csproj", "{61CAA5AC-A6C9-4A82-916D-6A71B88C0448}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,10 @@ Global
 		{FE3596D5-D187-4FCB-B700-54D35D50F694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3596D5-D187-4FCB-B700-54D35D50F694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3596D5-D187-4FCB-B700-54D35D50F694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61CAA5AC-A6C9-4A82-916D-6A71B88C0448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CAA5AC-A6C9-4A82-916D-6A71B88C0448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CAA5AC-A6C9-4A82-916D-6A71B88C0448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CAA5AC-A6C9-4A82-916D-6A71B88C0448}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
