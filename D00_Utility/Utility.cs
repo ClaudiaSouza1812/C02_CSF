@@ -65,7 +65,15 @@ namespace D00_Utility
             Console.Clear();
         }
 
-        public static void CalculatorTemplate(int[] numbers, string[] operators, int result = 0)
+        public static void PauseConsole()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("\n\nPrime qualquer tecla para continuar.\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ReadKey();
+        }
+
+        /*public static void CalculatorTemplate(int[] numbers, string[] operators, int result = 0)
         {
             Console.BackgroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine(new string('-', 18));
@@ -85,6 +93,6 @@ namespace D00_Utility
                 Console.ResetColor();
             }
 
-        }
+        }*/
     }
 }

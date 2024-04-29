@@ -1,6 +1,7 @@
 ﻿using D00_Utility;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -21,7 +22,7 @@ namespace D13_AccessModifiers
 
         // variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
 
-        private DateTime registrationDate;
+        private DateTime registrationDate;  // suporte á propriedade RegistrationDate
 
         #endregion
 
@@ -30,7 +31,7 @@ namespace D13_AccessModifiers
         #region Auto-implemented properties 2.0
 
         // Declarar uma propriedade usando Auto-implemented properties
-        public int Id { get; set; }
+        public int Id { get; }  // read-only
         public string Name { get; set; }
         public string Department { get; set; }
         public string Username { get; set; }
@@ -67,7 +68,7 @@ namespace D13_AccessModifiers
         // Substituto do default constructor
         public User()
         {
-            Id = 0;
+            Id = 1;
             Name = string.Empty;
             Department = string.Empty;
             Username = string.Empty;
@@ -96,26 +97,36 @@ namespace D13_AccessModifiers
             Utility.WriteTitle("User - Creation", endTitle: "\n\n");
 
             int i = 0;
-            string[] properties = { "id", "name", "department", "username", "password", "registrationDate" };
+            bool status = false;
+
+            string[] properties = { "nome", "departamento", "usuário", "senha", "Data Registro" };
             string[] userData = new string[properties.Length];
 
             foreach (string prop in properties)
             {
-                if (prop == "id")
+                if (prop == "Data Registro")
                 {
-                    Utility.WriteMessage($"Insira o {prop} do usuário: ");
-                    int id = Convert.ToInt32(Console.ReadLine());
-                    userData[i] = Convert.ToString(id);
-                    i++;
+                    do
+                    {
+                        Utility.WriteMessage($"Insira o(a) {prop} do usuário: ");
+                        status = DateTime.TryParse(Console.ReadLine(), out registrationDate);
+                        
+                    } while (status != true);
+
+                    RegistrationDate = registrationDate;
                 }
                 else
                 {
-                    Utility.WriteMessage($"Insira o {prop} do usuário: ");
+                    Utility.WriteMessage($"Insira o(a) {prop} do usuário: ");
                     userData[i] = Console.ReadLine();
                     i++;
                 }
             }
-            
+
+            Name = userData[0];
+            Department = userData[1];
+            Username = userData[2];
+            Password = userData[3];
         }
 
         // Método para mostrar o usuário
