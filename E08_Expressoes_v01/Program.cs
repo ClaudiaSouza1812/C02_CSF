@@ -21,8 +21,10 @@ namespace E08_Expressoes_v01
 
             Expression exp02 = new Expression(15, 2);
 
-            exp02.ExpressionWriteResult();
-            
+            //exp02.ExpressionWriteResult();
+
+            Expression exp03 = new Expression();
+            exp03.ExpressionReadData();
 
             Utility.TerminateConsole();
         }
