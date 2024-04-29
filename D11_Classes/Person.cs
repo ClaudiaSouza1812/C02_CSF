@@ -30,7 +30,7 @@ namespace D11_Classes
     {
         #region Fields (properties private variables)
 
-        // varieadades internas da classe para serem usadas dentro das propriedades
+        // variedades internas da classe para serem usadas dentro das propriedades
         private string address, city, country;
 
         #endregion
