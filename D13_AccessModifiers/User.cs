@@ -52,13 +52,6 @@ namespace D13_AccessModifiers
 
         #region Bodied-expression properties 3.0
 
-        // Declarar uma propriedade usando Bodied-expression properties
-        /*public double Value02
-        {
-            get => value02;         // => lambda operator
-            set => value02 = value;
-        }*/
-
         #endregion
 
         #endregion
