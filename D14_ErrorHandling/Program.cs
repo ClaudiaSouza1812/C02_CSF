@@ -15,8 +15,12 @@ namespace D14_ErrorHandling
 
             Utility.WriteTitle("Error handling");
 
+
             #region Sem tratamento de erros
 
+            int number;
+            Utility.WriteMessage("Insira o número: ");
+            number = Convert.ToInt16(Console.ReadLine());
 
 
             #endregion
