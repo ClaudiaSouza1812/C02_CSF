@@ -117,6 +117,7 @@ namespace D13_AccessModifiers
         internal void ListUser()
         {
             Utility.WriteTitle("User - Show Data", "\n", "\n\n");
+            // implementar encriptamento da senha
 
             Utility.WriteMessage($"Id: {Id}\nNome: {Name}\nDepartamento: {Department}\nNome do Usuário: {Username}\nSenha: {Password}\nData do Registro: {RegistrationDate}");
         }
