@@ -83,9 +83,9 @@ namespace D13_AccessModifiers
 
         #region Methods (public or internal)
 
-        // Método para criar um usuário
+        // Método interno para criar um usuário
         
-        public void CreateUser()    
+        internal void CreateUser()    
         {
             Utility.WriteTitle("User - Creation", endTitle: "\n\n");
 
@@ -105,7 +105,7 @@ namespace D13_AccessModifiers
 
             do
             {
-                Utility.WriteMessage($"Insira a data de registro do usuário: ");
+                Utility.WriteMessage($"Insira a data de registro do usuário, ex (04/04/2024): ");
                 status = DateTime.TryParse(Console.ReadLine(), out registrationDate);
                         
             } while (!status);  // !: not
@@ -113,8 +113,8 @@ namespace D13_AccessModifiers
             RegistrationDate = registrationDate;
         }
 
-        // Método para mostrar o usuário
-        public void ListUser()
+        // Método interno para mostrar o usuário
+        internal void ListUser()
         {
             Utility.WriteTitle("User - Show Data", "\n", "\n\n");
 

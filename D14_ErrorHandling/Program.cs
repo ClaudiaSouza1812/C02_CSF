@@ -1,4 +1,5 @@
-﻿using System;
+﻿using D00_Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,23 @@ namespace D14_ErrorHandling
     {
         static void Main(string[] args)
         {
+            Utility.SetUnicodeConsole();
+
+            Utility.WriteTitle("Error handling");
+
+            #region Sem tratamento de erros
+
+
+
+            #endregion
+
+            #region Com tratamento de erros
+
+
+
+            #endregion
+
+            Utility.TerminateConsole();
         }
     }
 }
