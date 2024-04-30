@@ -89,6 +89,43 @@ namespace D13_AccessModifiers
         {
             Utility.WriteTitle("User - Creation", endTitle: "\n\n");
 
+            bool status = false;
+
+            Utility.WriteMessage("Insira o nome do usuário: ");
+            Name = Console.ReadLine();
+
+            Utility.WriteMessage("Insira o departamento do usuário: ");
+            Department = Console.ReadLine();
+
+            Utility.WriteMessage("Insira o username do usuário: ");
+            Username = Console.ReadLine();
+
+            Utility.WriteMessage("Insira a senha do usuário: ");
+            Password = Console.ReadLine();
+
+            do
+            {
+                Utility.WriteMessage($"Insira a data de registro do usuário: ");
+                status = DateTime.TryParse(Console.ReadLine(), out registrationDate);
+                        
+            } while (status != true);
+
+            RegistrationDate = registrationDate;
+        }
+
+        // Método para mostrar o usuário
+        public void ListUser()
+        {
+            Utility.WriteTitle("User - Show Data", "\n", "\n\n");
+
+            Utility.WriteMessage($"Id: {Id}\nNome: {Name}\nDepartamento: {Department}\nNome do Usuário: {Username}\nSenha: {Password}\nData do Registro: {RegistrationDate}");
+        }
+
+        /*
+         public void CreateUser()
+        {
+            Utility.WriteTitle("User - Creation", endTitle: "\n\n");
+
             int i = 0;
             bool status = false;
 
@@ -121,16 +158,7 @@ namespace D13_AccessModifiers
             Username = userData[2];
             Password = userData[3];
         }
-
-        // Método para mostrar o usuário
-        public void ListUser()
-        {
-            Utility.WriteTitle("User - Show Data", "\n", "\n\n");
-
-            Utility.WriteMessage($"Id: {Id}\nNome: {Name}\nDepartamento: {Department}\nNome do Usuário: {Username}\nSenha: {Password}\nData do Registro: {RegistrationDate}");
-        }
-
-        
+         */
         #endregion
 
         #region Destructor
