@@ -53,8 +53,10 @@ namespace D14_ErrorHandling
                 // lançar o erro, interrompe a execução - versão de desenvolvimento
                 //throw;  
             }
-
-            // event viewer do windows
+            finally // é sempre executado, havendo erro ou não
+            {
+                Utility.WriteMessage("Terminei!", "\n", "\n");
+            }
 
             #endregion
 
