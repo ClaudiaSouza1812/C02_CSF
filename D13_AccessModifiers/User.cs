@@ -93,7 +93,7 @@ namespace D13_AccessModifiers
 
             Utility.WriteMessage("Insira o nome do usuário: ");
             Name = Console.ReadLine();
-
+            
             Utility.WriteMessage("Insira o departamento do usuário: ");
             Department = Console.ReadLine();
 
@@ -121,7 +121,7 @@ namespace D13_AccessModifiers
             Utility.WriteMessage($"Id: {Id}\nNome: {Name}\nDepartamento: {Department}\nNome do Usuário: {Username}\nSenha: {Password}\nData do Registro: {RegistrationDate}");
         }
 
-        /*
+        /* with arays 
          public void CreateUser()
         {
             Utility.WriteTitle("User - Creation", endTitle: "\n\n");
