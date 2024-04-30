@@ -134,7 +134,7 @@ namespace D09_ConditionalStructures
                     Utility.WriteMessage("O número é igual a 15.");
                     break;
                 default:
-                    Utility.WriteMessage("O número não é: 0, 5, 10, 15.");
+                    Utility.WriteMessage("O número não é: 0, 4, 5, 10, 15.");
                     break;
             }
             #endregion

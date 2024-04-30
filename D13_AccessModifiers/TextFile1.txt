@@ -2,6 +2,9 @@
 Access Modifiers: 
 used to set the access level/visibility for classes, fields, methods and properties.
 
+Why Access Modifiers?
+To control the visibility of class members (the security level of each individual class and class member).
+
 Access modifiers types:
 
 Public: 
@@ -16,4 +19,8 @@ Protected:
 The code is accessible within the same class, or in a class that is inherited from that class;
 
 Internal: 
-The code is only accessible within its own assembly, its own program, but not from another assembly, other programs; 
+The code is only accessible within its own assembly, its own program, but not from another assembly, other programs;
+
+
+
+To achieve "Encapsulation" - which is the process of making sure that "sensitive" data is hidden from users. This is done by declaring fields as private.
