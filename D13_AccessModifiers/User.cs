@@ -85,7 +85,7 @@ namespace D13_AccessModifiers
 
         // Método para criar um usuário
         
-        public void CreateUser()    // Todo MRS: estás a complicar!
+        public void CreateUser()    
         {
             Utility.WriteTitle("User - Creation", endTitle: "\n\n");
 
@@ -108,7 +108,7 @@ namespace D13_AccessModifiers
                 Utility.WriteMessage($"Insira a data de registro do usuário: ");
                 status = DateTime.TryParse(Console.ReadLine(), out registrationDate);
                         
-            } while (status != true);
+            } while (!status);  // !: not
 
             RegistrationDate = registrationDate;
         }

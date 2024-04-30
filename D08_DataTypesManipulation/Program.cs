@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-// ToDo MRS: Implementar a class library D00_Utility
 using D00_Utility;
-// ToDo CSS: Usar Utility
+
 namespace D08_DataTypesManipulation
 {
 
