@@ -115,7 +115,6 @@ namespace D09_ConditionalStructures
             #endregion
 
             #region Switch
-            // ToDo MRS: Se o nº for entre 1 e 4 dizer o seu extenso
 
             switch (numero)
             {
@@ -123,7 +122,8 @@ namespace D09_ConditionalStructures
                     Utility.WriteMessage("O número é igual a 0.");
                     break;
                 case 4:
-                    Utility.WriteMessage("")
+                    Utility.WriteMessage("O número é igual a quatro");
+                    break;
                 case 5:
                     Utility.WriteMessage("O número é igual a 5.");
                     break;
