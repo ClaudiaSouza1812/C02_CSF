@@ -154,17 +154,10 @@ namespace E06_Calculadora_v02_ComClasses
             return reference;
         }
 
-        // Método para checar e devolver um operador
+        // Método para checar e devolver um operador usando switch
+        /*
         internal string CheckOperators(string input)
         {
-            /*tentar foreach
-             * string[] opers = { "+", "-", "+", "/" };
-
-            foreach (var item in opers)
-            {
-                
-            }*/
-
             bool status = false;
 
             while (!status)
@@ -192,6 +185,23 @@ namespace E06_Calculadora_v02_ComClasses
             }
             return input;
         }
+        */
+
+        //Método para checar e devolver um operador usando array
+         
+        internal string CheckOperators(string input)
+        {
+            string[] opers = { "+", "-", "*", "/" };
+
+            while (!opers.Contains(input))
+            {
+                Utility.WriteMessage($"Você digitou {input}, entre um dos 4 operadores válidos acima.", "", "\n");
+                Utility.WriteMessage("Operador: ");
+                input = Console.ReadLine();
+            }
+            return input;
+        }
+         
 
         // Método para mostrar no console o resultado de uma operação aritmética simples
         public void CalculatorWriteResult()
