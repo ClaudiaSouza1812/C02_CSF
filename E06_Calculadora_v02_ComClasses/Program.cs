@@ -30,11 +30,22 @@ namespace E06_Calculadora_v02_ComClasses
 
             #region Mostrar o resultado
             Calculator calc01 = new Calculator(2, 5, "/");
-            Calculator calc02 = new Calculator();
 
-            
-            //calc01.CalculatorWriteResult();
-            calc02.CalculatorReadData();
+            Calculator calc02 = new Calculator();
+            calc02.Value01 = 10;
+            calc02.Value02 = 20;
+            calc02.Operators = "*";
+
+            Calculator calc03 = new Calculator();
+
+            calc01.CalculatorWriteResult();
+            Utility.PauseConsole();
+
+            calc02.CalculatorWriteResult();
+            Utility.PauseConsole();
+
+            calc03.CalculatorReadData();
+
 
             Utility.TerminateConsole();
             #endregion

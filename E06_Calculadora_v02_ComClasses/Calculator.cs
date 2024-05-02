@@ -128,9 +128,9 @@ namespace E06_Calculadora_v02_ComClasses
             double result;
             result = value01 / value02;
 
-            if (Value02 == 0)
+            if (value02 == 0)
             {
-                Utility.WriteMessage($"Não existe divisão por {Value02}.", endMessage: "\n\n");
+                Utility.WriteMessage($"Não existe divisão por {value02}.", endMessage: "\n\n");
                 return result;
             }
             else
@@ -140,24 +140,22 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Método para checar e devolver um double
-        internal double CheckDouble(bool status, string input, string valor)
+        internal double CheckDouble(string input, string valor)
         {
             double reference;
-            status = double.TryParse(input, out reference);
-            while (status == false)
+            
+            while (!double.TryParse(input, out reference))
             {
-                Utility.WriteMessage($"Você digitou '{input}', entre um valor numérico.", "", "\n");
+                Utility.WriteMessage($"Você digitou '{input}', entre um valor numérico ou decimal.", "", "\n");
                 Utility.WriteMessage($"{valor}: ");
                 input = Console.ReadLine();
-                status = double.TryParse(input, out reference);
             }
 
-            reference = Convert.ToDouble(input);
             return reference;
         }
 
         // Método para checar e devolver um operador
-        internal string CheckOperators(string input, bool status)
+        internal string CheckOperators(string input)
         {
             /*tentar foreach
              * string[] opers = { "+", "-", "+", "/" };
@@ -166,7 +164,10 @@ namespace E06_Calculadora_v02_ComClasses
             {
                 
             }*/
-            while (status == false)
+
+            bool status = false;
+
+            while (!status)
             {
                 switch (input)
                 {
@@ -195,7 +196,7 @@ namespace E06_Calculadora_v02_ComClasses
         // Método para mostrar no console o resultado de uma operação aritmética simples
         public void CalculatorWriteResult()
         {
-            Utility.WriteTitle("Calculator - result", endTitle:"\n\n");
+            Utility.WriteTitle("Calculator - result", "\n", "\n\n");
 
             double result;
             
@@ -223,11 +224,13 @@ namespace E06_Calculadora_v02_ComClasses
         // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
         public void CalculatorReadData()
         {
-            Utility.WriteTitle("Calculator - set the new calculation data", endTitle: "\n\n");
+            Utility.WriteTitle("Calculator - set the new calculation data", "\n", "\n\n");
 
-            bool status = false;
             string input;
             string valor = "Primeiro valor";
+
+            Utility.WriteMessage("São aceitos numeros inteiros e decimais.", endMessage: "\n\n");
+            Utility.WriteMessage("Insira os decimais usando a vírgula (,) como separador.", endMessage: "\n\n");
 
             Utility.WriteMessage("Insira os 2 valores desejados e um dos seguintes operadores: ", endMessage: "\n\n");
 
@@ -236,18 +239,18 @@ namespace E06_Calculadora_v02_ComClasses
             Utility.WriteMessage($"{valor}: ");
             input = Console.ReadLine();
 
-            Value01 = CheckDouble(status, input, valor);
+            Value01 = CheckDouble(input, valor);
 
             valor = "Segundo valor";
             Utility.WriteMessage($"{valor}: ");
             input = Console.ReadLine();
 
-            Value02 = CheckDouble(status, input, valor);
+            Value02 = CheckDouble(input, valor);
 
             Utility.WriteMessage("Operador: ");
             input = Console.ReadLine();
 
-            Operators = CheckOperators(input, status);
+            Operators = CheckOperators(input);
 
             CalculatorWriteResult(Value01, Value02, Operators);
         }
