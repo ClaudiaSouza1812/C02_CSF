@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace D13_AccessModifiers
 {
@@ -113,13 +114,25 @@ namespace D13_AccessModifiers
             RegistrationDate = registrationDate;
         }
 
+        /*internal string EncryptPassword(string password)
+        {
+            using (SHA256Managed sha256 = new SHA256Managed())
+            {
+                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            };
+            
+        }*/
+
         // Método interno para mostrar o usuário
         internal void ListUser()
         {
             Utility.WriteTitle("User - Show Data", "\n", "\n\n");
             // implementar encriptamento da senha
 
-            Utility.WriteMessage($"Id: {Id}\nNome: {Name}\nDepartamento: {Department}\nNome do Usuário: {Username}\nSenha: {Password}\nData do Registro: {RegistrationDate}");
+            string hidePassword = "********";
+
+            Utility.WriteMessage($"Id: {Id}\nNome: {Name}\nDepartamento: {Department}\nNome do Usuário: {Username}\nSenha: {hidePassword}\nData do Registro: {RegistrationDate}");
         }
 
         /* with arays 
