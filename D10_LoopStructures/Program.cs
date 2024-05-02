@@ -22,10 +22,12 @@ namespace D10_LoopStructures
             // O teste é feito no início
             // Não garante que seja feito pelo menos uma única vez
 
-            Utility.WriteTitle("WHILE");
+            
 
             while (string01 != "x")
             {
+                Console.Clear();
+                Utility.WriteTitle("WHILE");
                 Utility.WriteMessage("Para saíres escreve x: ", "\n");
                 string01 = Console.ReadLine();
             }

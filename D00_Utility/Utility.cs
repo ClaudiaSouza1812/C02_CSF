@@ -53,9 +53,9 @@ namespace D00_Utility
 
         public static void WriteMessage(string message, string beginMessage = "", string endMessage = "")
         {
-           
             Console.Write($"{beginMessage}{message}{endMessage}");
         }
+
         public static void TerminateConsole()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
