@@ -14,12 +14,12 @@ namespace D13_AccessModifiers
             Utility.SetUnicodeConsole();
 
             User user01 = new User();
-            user01.CreateUser();
+            //user01.CreateUser();
 
             Utility.PauseConsole();
 
             User user02 = new User(1, "Claudia", "TI", "claudiasimone", "123456", DateTime.Today);
-            user01.ListUser();
+            user02.ListUser();
 
             Utility.TerminateConsole();
         }
