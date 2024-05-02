@@ -23,14 +23,14 @@ namespace E06_Calculadora_v02_ComClasses
         #region Auto-implemented properties 2.0
 
         // Declarar uma propriedade usando Auto-implemented properties
-        public string Operators { get; set; }
+        internal string Operators { get; set; }
 
         #endregion
 
         #region Classic properties 1.0
 
         // Declarar uma propriedade usando Classic properties
-        public double Value01
+        internal double Value01
         {
             get { return value01; }     // Ler o valor da propriedade
             set { value01 = value; }    // escrever o valor da propriedade
@@ -41,7 +41,7 @@ namespace E06_Calculadora_v02_ComClasses
         #region Bodied-expression properties 3.0
 
         // Declarar uma propriedade usando Bodied-expression properties
-        public double Value02
+        internal double Value02
         {
             get => value02;         // => lambda operator
             set => value02 = value;
@@ -54,7 +54,7 @@ namespace E06_Calculadora_v02_ComClasses
         #region Constructors (Public)
 
         // Substituto do default constructor
-        public Calculator()
+        internal Calculator()
         {
             Value01 = 0;
             Value02 = 0;
@@ -62,7 +62,7 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Segundo construtor com inserção parâmetros obrigatórios
-        public Calculator(double value01, double value02, string operators)
+        internal Calculator(double value01, double value02, string operators)
         {
             Value01 = value01;
             Value02 = value02;
@@ -73,7 +73,7 @@ namespace E06_Calculadora_v02_ComClasses
         #region Methods (public or internal)
 
         // Método para devolver o resultado de uma operação aritmética simples
-        public double Operations(double value01, double value02, string operators)
+        internal double Operations(double value01, double value02, string operators)
         {
             double result;
 
@@ -99,7 +99,7 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Método para devolver a soma de dois valores
-        public double Sum(double value01, double value02)
+        internal double Sum(double value01, double value02)
         {
             double result;
             result = value01 + value02;
@@ -107,7 +107,7 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Método para devolver a subtração de dois valores
-        public double Sub(double value01, double value02)
+        internal double Sub(double value01, double value02)
         {
             double result;
             result = value01 - value02;
@@ -115,7 +115,7 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Método para devolver a multiplicação de dois valores
-        public double Multi(double value01, double value02)
+        internal double Multi(double value01, double value02)
         {
             double result;
             result = value01 * value02;
@@ -123,7 +123,7 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Método para devolver a divisão de dois valores
-        public double Div(double value01, double value02)
+        internal double Div(double value01, double value02)
         {
             double result;
             result = value01 / value02;
@@ -204,7 +204,7 @@ namespace E06_Calculadora_v02_ComClasses
          
 
         // Método para mostrar no console o resultado de uma operação aritmética simples
-        public void CalculatorWriteResult()
+        internal void CalculatorWriteResult()
         {
             Utility.WriteTitle("Calculator - result", "\n", "\n\n");
 
@@ -218,7 +218,7 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Método para mostrar no console o resultado de uma operação aritmética simples
-        public void CalculatorWriteResult(double value01, double value02, string operators)
+        internal void CalculatorWriteResult(double value01, double value02, string operators)
         {
             Utility.WriteTitle("Calculator - result", "\n", "\n\n");
 
@@ -232,7 +232,7 @@ namespace E06_Calculadora_v02_ComClasses
         }
 
         // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
-        public void CalculatorReadData()
+        internal void CalculatorReadData()
         {
             Utility.WriteTitle("Calculator - set the new calculation data", "\n", "\n\n");
 
@@ -241,9 +241,7 @@ namespace E06_Calculadora_v02_ComClasses
 
             Utility.WriteMessage("São aceitos numeros inteiros e decimais.", endMessage: "\n\n");
             Utility.WriteMessage("Insira os decimais usando a vírgula (,) como separador.", endMessage: "\n\n");
-
             Utility.WriteMessage("Insira os 2 valores desejados e um dos seguintes operadores: ", endMessage: "\n\n");
-
             Utility.WriteMessage("Soma: \"+\"\nSubtração: \"-\"\nMultiplicação: \"*\"\nDivisão: \"/\"\n", endMessage: "\n");
 
             Utility.WriteMessage($"{valor}: ");

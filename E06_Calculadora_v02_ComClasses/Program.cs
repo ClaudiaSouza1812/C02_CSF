@@ -29,7 +29,48 @@ namespace E06_Calculadora_v02_ComClasses
             #endregion
 
             #region Mostrar o resultado
-            Calculator calc01 = new Calculator(2, 5, "/");
+
+            Calculator calc01 = new Calculator(2, 0, "/");
+
+            Calculator calc02 = new Calculator();
+            calc02.Value01 = 10;
+            calc02.Value02 = 20;
+            calc02.Operators = "*";
+
+            Calculator calc03 = new Calculator();
+
+            try
+            {
+                calc01.CalculatorWriteResult();
+                calc02.CalculatorWriteResult();
+                calc03.CalculatorReadData();
+            }
+            catch (DivideByZeroException ex)
+            {
+                Utility.WriteMessage("Não podes dividir por zero.", "\n", "\n");
+            }
+            catch (FormatException ex)
+            {
+                Utility.WriteMessage("Escreve um número.", "\n", "\n");
+            }
+            catch (Exception ex)    // ex: Exception variable
+            {
+                // versão de desenvolvimento, mostra o erro no ecrã
+                Utility.WriteMessage($"Erro: {ex.Message}", "\n", "\n");
+
+                // versão de produção (devemos implementar um sistema de logs
+                //Utility.WriteMessage("Aconteceu um erro.", "\n", "\n\n");   
+
+                // lançar o erro, interrompe a execução - versão de desenvolvimento
+                //throw;  
+            }
+            finally // é sempre executado, havendo erro ou não
+            {
+                Utility.WriteMessage("Até a próxima!", "\n", "\n");
+            }
+
+            /*
+            Calculator calc01 = new Calculator(2, 0, "/");
 
             Calculator calc02 = new Calculator();
             calc02.Value01 = 10;
@@ -45,9 +86,10 @@ namespace E06_Calculadora_v02_ComClasses
             Utility.PauseConsole();
 
             calc03.CalculatorReadData();
-
+            */
 
             Utility.TerminateConsole();
+            
             #endregion
         }
     }
