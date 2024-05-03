@@ -34,6 +34,7 @@ namespace E06_Calculadora_v02_ComClasses
         #region Classic properties 1.0
 
         // Declarar uma propriedade usando Classic properties
+  
         internal double Value01
         {
             get { return value01; }     // Ler o valor da propriedade
