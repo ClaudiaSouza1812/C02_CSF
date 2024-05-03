@@ -1,4 +1,7 @@
-﻿using D00_Utility;
+// Todo MRS: Complicaste demasiado algo que se quer simples, embora estruturado.
+// Todo MRS: Tens de pensar melhor na responsabilidade da classe e de cada um dos métodos, antes de implementares e evitares criar métodos que não acrescentam valor ao algoritmo.
+
+using D00_Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +26,7 @@ namespace E06_Calculadora_v02_ComClasses
         #region Auto-implemented properties 2.0
 
         // Declarar uma propriedade usando Auto-implemented properties
-        public string Operators { get; set; }
+        public string Operators { get; set; }    // Todo MRS: propriedade no singular
 
         #endregion
 
@@ -71,7 +74,10 @@ namespace E06_Calculadora_v02_ComClasses
         #endregion
 
         #region Methods (public or internal)
-
+        
+        // Todo MRS: Uma vez que os valores estão nas propriedades, não faz sentido enviar como parameters para o método        
+        // Todo MRS: Os 4 métodos artiméticos têm a responsabilidade de gerar um resultado pelo cálculo efetuado. Logo, este método só tem a responsabilidade de os invocar, não de ficar com o resultado
+            
         // Método para devolver o resultado de uma operação aritmética simples
         public double Operations(double value01, double value02, string operators)
         {
@@ -98,6 +104,8 @@ namespace E06_Calculadora_v02_ComClasses
             return result;
         }
 
+        // Todo MRS: Ontem falei desta particularidade, que seria mais eficaz criar uma propriedade adicional do resultado e usar nos métodos aritméticos
+        
         // Método para devolver a soma de dois valores
         public double Sum(double value01, double value02)
         {
@@ -139,6 +147,8 @@ namespace E06_Calculadora_v02_ComClasses
             }
         }
 
+        // Todo MRS: Podes fazer este método, mas nesse caso, retira-o da classe, porque não manipula diretamente os seus dados. Vai para uma classe utilitária do Calculator
+        
         // Método para checar e devolver um double
         internal double CheckDouble(bool status, string input, string valor)
         {
@@ -156,6 +166,8 @@ namespace E06_Calculadora_v02_ComClasses
             return reference;
         }
 
+        // Todo MRS: Vimos isto ontem
+        
         // Método para checar e devolver um operador
         internal string CheckOperators(string input, bool status)
         {
@@ -192,6 +204,8 @@ namespace E06_Calculadora_v02_ComClasses
             return input;
         }
 
+        // Todo MRS: Para quê este overload (2 versões diferentes) do método  CalculatorWriteResult()?
+        
         // Método para mostrar no console o resultado de uma operação aritmética simples
         public void CalculatorWriteResult()
         {
@@ -206,6 +220,8 @@ namespace E06_Calculadora_v02_ComClasses
             Utility.WriteMessage($"Resultado: {Value01} {Operators} {Value02} = {result}", endMessage: "\n");
         }
 
+        // Todo MRS: Se é um método para mostrar o resultado, não devia estar a obter o resultado aqui. E mais uma vez, se as propriedades já têm valores, não devem ser enviados os parameters
+        
         // Método para mostrar no console o resultado de uma operação aritmética simples
         public void CalculatorWriteResult(double value01, double value02, string operators)
         {
@@ -220,6 +236,8 @@ namespace E06_Calculadora_v02_ComClasses
             Utility.WriteMessage($"Resultado: {value01} {operators} {value02} = {result}", endMessage: "\n");
         }
 
+        // Todo MRS: Tentar validar os valores da consola e guardar diretamente nas propriedades, em vez de andar a criar variáveis. Não esquecer que este é um exercício simples e estás a complicar.
+        
         // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
         public void CalculatorReadData()
         {
@@ -231,6 +249,8 @@ namespace E06_Calculadora_v02_ComClasses
 
             Utility.WriteMessage("Insira os 2 valores desejados e um dos seguintes operadores: ", endMessage: "\n\n");
 
+            // Todo MRS: Isto devia ser um menu de escolha da operação
+            
             Utility.WriteMessage("Soma: \"+\"\nSubtração: \"-\"\nMultiplicação: \"*\"\nDivisão: \"/\"\n", endMessage: "\n");
 
             Utility.WriteMessage($"{valor}: ");
