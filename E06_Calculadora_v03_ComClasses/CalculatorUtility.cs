@@ -39,9 +39,9 @@ namespace E06_Calculadora_v03_ComClasses
                 {
                     { "0", " Exit" },
                     { "1", " Sum" },
-                    { "2", " Subtract" },
-                    { "3", " Multiply" },
-                    { "4", " Divide"}
+                    { "2", " Subtraction" },
+                    { "3", " Multiplycation" },
+                    { "4", " Division"}
                 };
 
             do

@@ -76,57 +76,51 @@ namespace E06_Calculadora_v03_ComClasses
         #region Methods (public or internal)
 
         // Método para devolver a soma de dois valores
-        internal double Sum()
+        internal void Sum()
         {
             Result = Value01 + Value02;
-            return Result;
         }
 
         // Método para devolver a subtração de dois valores
-        internal double Sub()
+        internal void Sub()
         {
             Result = Value01 - Value02;
-            return Result;
         }
 
         // Método para devolver a multiplicação de dois valores
-        internal double Multi()
+        internal void Multi()
         {
             Result = Value01 * Value02;
-            return Result;
         }
 
         // Método para devolver a divisão de dois valores
-        internal double Div()
+        internal void Div()
         {
             Result = Value01 / Value02;
 
             if (Value02 == 0)
             {
                 Utility.WriteMessage($"Não existe divisão por {Value02}.", endMessage: "\n\n");
-                return Result;
-            }
-            else
-            {
-                return Result;
             }
         }
 
         // Método para devolver o resultado de uma operação aritmética simples
-        internal double Calculate()
+        internal void Calculate()
         {
             switch (Operator)
             {
                 case "1":
-                    return Sum();
+                    Sum();
+                    break;
                 case "2":
-                    return Sub();
+                    Sub();
+                    break;
                 case "3":
-                    return Multi();
+                    Multi();
+                    break;
                 case "4":
-                    return Div();
-                default:
-                    return 0;
+                    Div();
+                    break;
             }
         }
 
