@@ -121,6 +121,7 @@ namespace E06_Calculadora_v03_ComClasses
                 case "4":
                     Div();
                     break;
+                
             }
         }
 
@@ -143,6 +144,10 @@ namespace E06_Calculadora_v03_ComClasses
                 case "4":
                     Utility.WriteTitle("Division Operation (/)", "\n", "\n\n");
                     Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (/)\nSegundo valor: {Value02}", endMessage: "\n");
+                    break;
+                default:
+                    Utility.WriteTitle("Erro", "", "\n\n");
+                    Utility.WriteMessage("Insira dados válidos (Número da operação escolhida, 2 valores).", "", "\n");
                     break;
             }
         }
