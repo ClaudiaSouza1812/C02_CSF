@@ -64,11 +64,10 @@ namespace E06_Calculadora_v03_ComClasses
 
         // Fazer segundo construtor com inserção parâmetros obrigatórios
 
-        internal Calculator(double value01, double value02, double result, string operator01)
+        internal Calculator(double value01, double value02,string operator01)
         {
             Value01 = value01;
             Value02 = value02;
-            Result = result;
             Operator = operator01;
         }
 
@@ -114,7 +113,7 @@ namespace E06_Calculadora_v03_ComClasses
         }
 
         // Método para devolver o resultado de uma operação aritmética simples
-        internal double Operations()
+        internal double Calculate()
         {
             switch (Operator)
             {
@@ -132,24 +131,22 @@ namespace E06_Calculadora_v03_ComClasses
         }
 
         // Método para mostrar no console o resultado de uma operação aritmética simples
-        internal void CalculatorWriteResult()
+        internal void ShowResult()
         {
             Utility.WriteTitle("Calculator - result", "\n", "\n\n");
 
-            Utility.WriteMessage($"Você inseriu os valores ({Value01}), ({Value02}) e o operador ({Operator}).", endMessage: "\n\n");
-
-            Utility.WriteMessage($"Resultado: {Value01} {Operator} {Value02} = {Result}", endMessage: "\n");
+            Utility.WriteMessage($"Resultado: {Result}", endMessage: "\n");
         }
 
         // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
-        internal void CalculatorReadData()
+        internal void AskData()
         {
             Utility.WriteTitle("Calculator - set the new calculation data", "\n", "\n\n");
 
             Utility.WriteMessage("São aceitos numeros inteiros e decimais.", endMessage: "\n\n");
             Utility.WriteMessage("Insira os decimais usando a vírgula (,) como separador.", endMessage: "\n\n");
             
-            CalculatorUtility.CheckOperators();
+            Operator = CalculatorUtility.ShowMenu();
 
             Utility.WriteMessage($"Primeiro valor: ");
             Value01 = CalculatorUtility.CheckDouble(Console.ReadLine());
@@ -157,9 +154,7 @@ namespace E06_Calculadora_v03_ComClasses
             Utility.WriteMessage($"Segundo valor: ");
             Value02 = CalculatorUtility.CheckDouble(Console.ReadLine());
 
-            
-
-            CalculatorWriteResult();
+            ShowResult();
         }
 
         

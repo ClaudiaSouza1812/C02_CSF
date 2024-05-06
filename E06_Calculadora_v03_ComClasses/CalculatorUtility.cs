@@ -26,36 +26,53 @@ namespace E06_Calculadora_v03_ComClasses
 
         //Método para checar e devolver um operador usando array
 
-        internal static string CheckOperators()
+        internal static string ShowMenu()
         {
             Utility.WriteMessage("Insira um dos seguintes operadores: ", endMessage: "\n\n");
 
+            string operation;
+            bool status;
+
             string[,] opers = 
             {
-                { "(0)", " Exit" },
-                { "(1)", " Sum" },
-                { "(2)", "Subtract" },
-                { "(3)", "Multiply" },
-                { "(4)", "Divide"}
+                { "0", " Exit" },
+                { "1", " Sum" },
+                { "2", " Subtract" },
+                { "3", " Multiply" },
+                { "4", " Divide"}
             };
 
-            for (int row = 0; row < 5; row++)
+            do
             {
-                for (int col = 0; col < 2; col++)
+                
+                Utility.WriteTitle("Calculator - set the new calculation data", "\n", "\n\n");
+
+                for (int row = 0; row < 5; row++)
                 {
-                    Utility.WriteMessage($"{opers[row, col]}");
+                    for (int col = 0; col < 2; col++)
+                    {
+                        Utility.WriteMessage($"{opers[row, col]}");
+                    }
+                    Utility.WriteMessage("\n");
                 }
-            }
 
-            Utility.WriteMessage("Operação: ");
-
-            while (!opers.Contains(input))
-            {
-                Utility.WriteMessage($"Você digitou {input}, entre uma das 5 operações válidas acima.", "", "\n");
                 Utility.WriteMessage("Operação: ");
-                input = Console.ReadLine();
-            }
-            return input;
+                operation = Console.ReadLine();
+
+                status = false;
+
+                for (int i = 0; i < opers.GetLength(0); i++)
+                {
+                    if (opers[i, 0] == operation)
+                    {
+                        status = true;
+                        break;
+                    }
+                }
+
+            } while (!status);
+
+            return operation;
         }
     }
 }
