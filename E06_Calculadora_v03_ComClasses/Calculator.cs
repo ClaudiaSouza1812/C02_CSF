@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace E06_Calculadora_v03_ComClasses
 {
     internal class Calculator
@@ -113,24 +114,55 @@ namespace E06_Calculadora_v03_ComClasses
         }
 
         // Método para devolver o resultado de uma operação aritmética simples
-        internal void Operations()
+        internal double Operations()
         {
             switch (Operator)
             {
-                case "+":
-                    Sum();
-                    break;
-                case "-":
-                    Sub();
-                    break;
-                case "*":
-                    Multi();
-                    break;
-                case "/":
-                    Div();
-                    break;
+                case "1":
+                    return Sum();
+                case "2":
+                    return Sub();
+                case "3":
+                    return Multi();
+                case "4":
+                    return Div();
+                default:
+                    return 0;
             }
         }
+
+        // Método para mostrar no console o resultado de uma operação aritmética simples
+        internal void CalculatorWriteResult()
+        {
+            Utility.WriteTitle("Calculator - result", "\n", "\n\n");
+
+            Utility.WriteMessage($"Você inseriu os valores ({Value01}), ({Value02}) e o operador ({Operator}).", endMessage: "\n\n");
+
+            Utility.WriteMessage($"Resultado: {Value01} {Operator} {Value02} = {Result}", endMessage: "\n");
+        }
+
+        // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
+        internal void CalculatorReadData()
+        {
+            Utility.WriteTitle("Calculator - set the new calculation data", "\n", "\n\n");
+
+            Utility.WriteMessage("São aceitos numeros inteiros e decimais.", endMessage: "\n\n");
+            Utility.WriteMessage("Insira os decimais usando a vírgula (,) como separador.", endMessage: "\n\n");
+            
+            CalculatorUtility.CheckOperators();
+
+            Utility.WriteMessage($"Primeiro valor: ");
+            Value01 = CalculatorUtility.CheckDouble(Console.ReadLine());
+
+            Utility.WriteMessage($"Segundo valor: ");
+            Value02 = CalculatorUtility.CheckDouble(Console.ReadLine());
+
+            
+
+            CalculatorWriteResult();
+        }
+
+        
 
 
         #endregion

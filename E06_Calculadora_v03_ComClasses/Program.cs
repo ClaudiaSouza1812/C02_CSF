@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace E06_Calculadora_v03_ComClasses
 {
     internal class Program
