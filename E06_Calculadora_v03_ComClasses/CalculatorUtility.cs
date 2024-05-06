@@ -38,9 +38,9 @@ namespace E06_Calculadora_v03_ComClasses
             string[,] opers =
                 {
                     { "0", " Exit" },
-                    { "1", " Sum" },
+                    { "1", " Addition" },
                     { "2", " Subtraction" },
-                    { "3", " Multiplycation" },
+                    { "3", " Multiplication" },
                     { "4", " Division"}
                 };
 

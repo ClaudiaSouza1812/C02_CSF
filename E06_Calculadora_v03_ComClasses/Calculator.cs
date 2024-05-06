@@ -124,9 +124,34 @@ namespace E06_Calculadora_v03_ComClasses
             }
         }
 
+        internal void ShowOperation()
+        {
+            switch (Operator)
+            {
+                case "1":
+                    Utility.WriteTitle("Addition Operation (+)", "\n", "\n\n");
+                    Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (+)\nSegundo valor: {Value02}", endMessage: "\n");
+                    break;
+                case "2":
+                    Utility.WriteTitle("Subtraction Operation (-)", "\n", "\n\n");
+                    Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (-)\nSegundo valor: {Value02}", endMessage: "\n");
+                    break;
+                case "3":
+                    Utility.WriteTitle("Multiplication Operation (*)", "\n", "\n\n");
+                    Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (*)\nSegundo valor: {Value02}", endMessage: "\n");
+                    break;
+                case "4":
+                    Utility.WriteTitle("Division Operation (/)", "\n", "\n\n");
+                    Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (/)\nSegundo valor: {Value02}", endMessage: "\n");
+                    break;
+            }
+        }
+
         // Método para mostrar no console o resultado de uma operação aritmética simples
         internal void ShowResult()
         {
+            ShowOperation();
+
             Utility.WriteTitle("Calculator - result", "\n", "\n\n");
 
             Utility.WriteMessage($"Resultado: {Result}", endMessage: "\n");
@@ -135,21 +160,6 @@ namespace E06_Calculadora_v03_ComClasses
         // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
         internal void AskData()
         {
-            switch (Operator)
-            {
-                case "1":
-                    Utility.WriteTitle("Addition Operation", "\n", "\n\n");
-                    break;
-                case "2":
-                    Utility.WriteTitle("Subtraction Operation", "\n", "\n\n");
-                    break;
-                case "3":
-                    Utility.WriteTitle("Multiplication Operation", "\n", "\n\n");
-                    break;
-                case "4":
-                    Utility.WriteTitle("Division Operation", "\n", "\n\n");
-                    break;
-            }
             Utility.WriteMessage($"Primeiro valor: ");
             Value01 = CalculatorUtility.CheckDouble(Console.ReadLine());
 
