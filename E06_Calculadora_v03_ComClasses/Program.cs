@@ -14,10 +14,10 @@ namespace E06_Calculadora_v03_ComClasses
         {
             Utility.SetUnicodeConsole();
 
-            Calculator calc01 = new Calculator(05, 25, "1");
+            //Calculator calc01 = new Calculator(05, 25, "1");
 
-            calc01.Calculate();
-            calc01.ShowResult();
+            //calc01.Calculate();
+            //calc01.ShowResult();
 
             Calculator calc02 = new Calculator();
 

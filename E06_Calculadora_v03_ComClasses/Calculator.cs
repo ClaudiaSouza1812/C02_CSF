@@ -141,24 +141,12 @@ namespace E06_Calculadora_v03_ComClasses
         // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
         internal void AskData()
         {
-            Utility.WriteTitle("Calculator - set the new calculation data", "\n", "\n\n");
-
-            Utility.WriteMessage("São aceitos numeros inteiros e decimais.", endMessage: "\n\n");
-            Utility.WriteMessage("Insira os decimais usando a vírgula (,) como separador.", endMessage: "\n\n");
-            
-            Operator = CalculatorUtility.ShowMenu();
-
             Utility.WriteMessage($"Primeiro valor: ");
             Value01 = CalculatorUtility.CheckDouble(Console.ReadLine());
 
             Utility.WriteMessage($"Segundo valor: ");
             Value02 = CalculatorUtility.CheckDouble(Console.ReadLine());
-
-            ShowResult();
         }
-
-        
-
 
         #endregion
 
