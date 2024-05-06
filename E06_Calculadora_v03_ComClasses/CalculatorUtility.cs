@@ -46,7 +46,7 @@ namespace E06_Calculadora_v03_ComClasses
 
             do
             {
-                Utility.WriteMessage("Insira um dos seguintes operadores: ", endMessage: "\n\n");
+                Utility.WriteMessage("Escolha o número de um dos seguintes operadores: ", endMessage: "\n\n");
 
                 for (int row = 0; row < 5; row++)
                 {
@@ -71,6 +71,7 @@ namespace E06_Calculadora_v03_ComClasses
                     }
                 }
                 Console.Clear();
+                Utility.WriteTitle("Calculator - set the new calculation data", "\n", "\n\n");
 
             } while (!status);
 
