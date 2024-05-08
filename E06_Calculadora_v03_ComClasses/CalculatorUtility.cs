@@ -70,8 +70,8 @@ namespace E06_Calculadora_v03_ComClasses
                         break;
                     }
                 }
+
                 Console.Clear();
-                Utility.WriteTitle("Calculator - set the new calculation data", "\n", "\n\n");
 
             } while (!status);
 

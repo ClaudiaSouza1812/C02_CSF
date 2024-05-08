@@ -97,11 +97,6 @@ namespace E06_Calculadora_v03_ComClasses
         internal void Div()
         {
             Result = Value01 / Value02;
-
-            if (Value02 == 0)
-            {
-                Utility.WriteMessage($"Não existe divisão por {Value02}.", endMessage: "\n\n");
-            }
         }
 
         // Método para devolver o resultado de uma operação aritmética simples
@@ -130,20 +125,51 @@ namespace E06_Calculadora_v03_ComClasses
             switch (Operator)
             {
                 case "1":
+                    Console.Clear();
                     Utility.WriteTitle("Addition Operation (+)", "\n", "\n\n");
-                    Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (+)\nSegundo valor: {Value02}", endMessage: "\n");
+                    if (Value01 != 0)
+                    {
+                        Console.Clear();
+                        Utility.WriteTitle("Subtraction Operation (+)", "\n", "\n\n");
+                        Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (+)\nSegundo valor: {Value02}", endMessage: "\n");
+                    }
                     break;
                 case "2":
+                    Console.Clear();
                     Utility.WriteTitle("Subtraction Operation (-)", "\n", "\n\n");
-                    Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (-)\nSegundo valor: {Value02}", endMessage: "\n");
+                    if (Value01 != 0)
+                    {
+                        Console.Clear();
+                        Utility.WriteTitle("Subtraction Operation (-)", "\n", "\n\n");
+                        Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (-)\nSegundo valor: {Value02}", endMessage: "\n");
+                    }
                     break;
                 case "3":
+                    Console.Clear();
                     Utility.WriteTitle("Multiplication Operation (*)", "\n", "\n\n");
-                    Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (*)\nSegundo valor: {Value02}", endMessage: "\n");
+                    if (Value01 != 0)
+                    {
+                        Console.Clear();
+                        Utility.WriteTitle("Multiplication Operation (*)", "\n", "\n\n");
+                        Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (*)\nSegundo valor: {Value02}", endMessage: "\n");
+                    }
                     break;
                 case "4":
+                    Console.Clear();
                     Utility.WriteTitle("Division Operation (/)", "\n", "\n\n");
-                    Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (/)\nSegundo valor: {Value02}", endMessage: "\n");
+                    if (Value01 != 0)
+                    {
+                        Console.Clear();
+                        Utility.WriteTitle("Division Operation (/)", "\n", "\n\n");
+                        Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (/)\nSegundo valor: {Value02}", endMessage: "\n");
+                    }
+                    if (Value01 != 0 && Value02 == 0)
+                    {
+                        Console.Clear();
+                        Utility.WriteTitle("Division Operation (/)", "\n", "\n\n");
+                        Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (/)\nSegundo valor: {Value02}", endMessage: "\n");
+                        Utility.WriteMessage($"Não existe divisão por {Value02}.", "\n", "\n");
+                    }
                     break;
                 default:
                     Utility.WriteTitle("Erro", "", "\n\n");
@@ -156,15 +182,18 @@ namespace E06_Calculadora_v03_ComClasses
         internal void ShowResult()
         {
             ShowOperation();
-
+            
             Utility.WriteTitle("Calculator - result", "\n", "\n\n");
-
+            
             Utility.WriteMessage($"Resultado: {Result}", endMessage: "\n");
+            
         }
 
         // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
         internal void AskData()
         {
+            ShowOperation();
+
             Utility.WriteMessage($"Primeiro valor: ");
             Value01 = CalculatorUtility.CheckDouble(Console.ReadLine());
 

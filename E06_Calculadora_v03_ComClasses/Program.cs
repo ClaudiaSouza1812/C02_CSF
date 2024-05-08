@@ -14,7 +14,7 @@ namespace E06_Calculadora_v03_ComClasses
         {
             Utility.SetUnicodeConsole();
 
-            Calculator calc01 = new Calculator(05, 0, "5");
+            Calculator calc01 = new Calculator(05, 0, "2");
 
             calc01.Calculate();
             calc01.ShowResult();
@@ -30,7 +30,8 @@ namespace E06_Calculadora_v03_ComClasses
                 calc02.Calculate();
                 calc02.ShowResult();
             }
-            
+
+            Utility.WriteTitle("See you ;)", "\n");
             Utility.TerminateConsole();
         }
     }
