@@ -22,6 +22,9 @@ GO
 
 
 -- 2. 'T' para 'S'
+-- CHARINDEX(substring, string, start)
+-- STUFF(string, start, length, new_string)
+-- STUFF(sentença a ser escaneada, iniciando na posição(CHARINDEX(8)), delete (1) letra (T), insira 'S' na posição (8));
 
 
 UPDATE 
@@ -32,8 +35,19 @@ WHERE
 	[EmployeeID] = 1;
 GO
 
+-- versão com REPLACE e SUBSTRING:
+
+UPDATE
+	[dbo].[Employee]
+SET
+	[Code] = REPLACE([Code], SUBSTRING([Code], CHARINDEX('T', [Code], 8), 9), 'SI-000120')
+WHERE 
+	[EmployeeID] = 1;
+GO
+
 
 -- 3. 'Tecnologias' para 'Sistemas'
+-- REPLACE(string, old_string, new_string)
 
 
 UPDATE
