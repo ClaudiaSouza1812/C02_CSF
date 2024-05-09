@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_ClassTemplate_v01", "00_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E06_CalculadoraMRS_v02_ComClasses", "E06_CalculadoraMRS_v02_ComClasses\E06_CalculadoraMRS_v02_ComClasses.csproj", "{BC175CBC-2E64-4026-9DB0-85E534C36D43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D15_Collections_ArrayList", "D15_Collections_ArrayList\D15_Collections_ArrayList.csproj", "{1A7EA65A-BEFB-4AFB-8002-BD668CCE2BDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +227,10 @@ Global
 		{BC175CBC-2E64-4026-9DB0-85E534C36D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC175CBC-2E64-4026-9DB0-85E534C36D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC175CBC-2E64-4026-9DB0-85E534C36D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7EA65A-BEFB-4AFB-8002-BD668CCE2BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7EA65A-BEFB-4AFB-8002-BD668CCE2BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7EA65A-BEFB-4AFB-8002-BD668CCE2BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7EA65A-BEFB-4AFB-8002-BD668CCE2BDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

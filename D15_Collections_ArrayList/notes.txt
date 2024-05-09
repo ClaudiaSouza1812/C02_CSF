@@ -1,0 +1,19 @@
+﻿// Class Person:
+            //  2 propriedades: Name, City
+            //  2 construtores
+            //  1 método: ListPerson
+
+-----------------------------
+ESTRUTURAS DE DADOS (memória)
+-----------------------------
+
+Variables
+
+Arrays
+    Vetores (single dimension)
+    Matrizes (multi dimension)
+
+Collections
+    Normal
+    Generic
+
