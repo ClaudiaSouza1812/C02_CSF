@@ -23,7 +23,36 @@ namespace D15_Collections_ArrayList
             ArrayList listMulti = new ArrayList();
             ArrayList listIntegers = new ArrayList();
 
-            // 3.  
+            // 3.  Adicionar valores de tipos diferentes (um a um)
+
+            listMulti.Add(10);
+            listMulti.Add("a");
+            listMulti.Add(false);
+            listMulti.Add(DateTime.Today);
+
+            // 4. Adicionar 5 valores do tipo inteiro automaticamente
+
+            for (int i = 0; i < 5; i++)
+            {
+                listIntegers.Add(i);
+            }
+
+            listIntegers.Add("Vou dar cabo desta lista!");  // Mostra a vulnerabilidade da arra list
+            listIntegers.Add(-30);
+            listIntegers.Add(19);
+
+            // 5. Quantos elementos há na lista?
+
+            Utility.WriteTitle("ArrayList contagem", "", "\n\n");
+
+            Utility.WriteMessage($"Nº de elementos - listMulti: {listMulti.Count}", "", "\n");
+
+            Utility.WriteMessage($"Nº de elementos - listIntegers: {listIntegers.Count}", "", "\n\n");
+
+            // 6. Listar
+
+
+            // 7. Listar, ordenado
 
             #endregion
 

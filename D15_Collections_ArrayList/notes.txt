@@ -17,3 +17,8 @@ Collections
     Normal
     Generic
 
+-----------------------------
+ARRAYLIST
+-----------------------------
+Arraylist é fracamente tipada (weakly typed)
+    Pode conter qualquer tipo de dados
