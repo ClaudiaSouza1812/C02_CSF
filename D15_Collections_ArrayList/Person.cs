@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -83,11 +84,12 @@ namespace D15_Collections_ArrayList
 
         #region Methods (public or internal)
 
-        internal void ListPerson()
+        internal static void ListPerson(ArrayList list)
         {
-            
-
-
+            foreach (Person item in list)
+            {
+                Utility.WriteMessage($"{item.Name}, {item.City}", "", "\n");
+            }
         }
 
         #endregion

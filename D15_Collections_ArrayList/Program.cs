@@ -37,7 +37,7 @@ namespace D15_Collections_ArrayList
                 listIntegers.Add(i);
             }
 
-            listIntegers.Add("Vou dar cabo desta lista!");  // Mostra a vulnerabilidade da arra list
+            // listIntegers.Add("Vou dar cabo desta lista!");  // Mostra a vulnerabilidade da arra list
             listIntegers.Add(-30);
             listIntegers.Add(19);
 
@@ -51,12 +51,41 @@ namespace D15_Collections_ArrayList
 
             // 6. Listar
 
+            Utility.WriteTitle("ArrayList - listMulti", "", "\n\n");
+            PersonUtility.ListData(listMulti);
+
+            Utility.WriteTitle("ArrayList - listIntegers", "", "\n\n");
+            PersonUtility.ListData(listIntegers);
 
             // 7. Listar, ordenado
+
+            Utility.WriteTitle("ArrayList - listIntegers ordenada", "", "\n");
+            listIntegers.Sort();
+            PersonUtility.ListData(listIntegers);
 
             #endregion
 
             #region Persons: objects of class Person
+
+            // Criar 2 pessoas
+            
+            ArrayList list = new ArrayList();
+
+            Person person01 = new Person("Claudia", "Coimbra");
+            Person person02 = new Person();
+
+            person02.Name = "Paula";
+            person02.City = "Coimbra";
+
+            list.Add(person01);
+            list.Add(person02);
+
+            // Listar
+            Utility.WriteTitle("ArrayList - Person", "", "\n");
+
+            // PersonUtility.ListData(listPerson);
+
+            Person.ListPerson(list);
 
             #endregion
 
