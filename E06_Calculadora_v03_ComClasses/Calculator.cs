@@ -194,7 +194,7 @@ namespace E06_Calculadora_v03_ComClasses
         internal void AskData()
         {
             ShowOperation();
-
+            
             Utility.WriteMessage($"Primeiro valor: ");
             Value01 = CalculatorUtility.CheckDouble(Console.ReadLine());
 
@@ -208,17 +208,20 @@ namespace E06_Calculadora_v03_ComClasses
             string[] operators = { "+", "-", "*", "/", "=" };
             int i = Convert.ToInt16(Operator) - 1;
 
+            string display = string.Format(" {0} {1} {2} = {3} ", Value01, operators[i], Value02, Result);
+            int displayLength = display.Length + 5;
+
             Console.BackgroundColor = ConsoleColor.Cyan;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine(new string('-', 18));
-            Console.WriteLine($"| {Value01} {operators[i]} {Value02} = {Result} |");
-            Console.WriteLine(new string('-', 18));
-            Console.WriteLine($"| AC (+/-)  %  {operators[3]} |");
-            Console.WriteLine($"| {numbers[7]}    {numbers[8]}    {numbers[9]}  {operators[2]} |");
-            Console.WriteLine($"| {numbers[4]}    {numbers[5]}    {numbers[6]}  {operators[1]} |");
-            Console.WriteLine($"| {numbers[1]}    {numbers[2]}    {numbers[3]}  {operators[0]} |");
-            Console.WriteLine($"| {numbers[0]}         ,  {operators[4]} |");
-            Console.WriteLine(new string('-', 18));
+            Utility.WriteMessage(new string('-', displayLength), "", "\n");
+            Utility.WriteMessage($"{display}".PadRight(displayLength), "", "\n");
+            Utility.WriteMessage(new string('-', displayLength), "", "\n");
+            Utility.WriteMessage($" AC (+/ -) %  {operators[3]}".PadRight(displayLength), "", "\n");
+            Utility.WriteMessage($" {numbers[7]}    {numbers[8]}    {numbers[9]}  {operators[2]}".PadRight(displayLength), "", "\n");
+            Utility.WriteMessage($" {numbers[4]}    {numbers[5]}    {numbers[6]}  {operators[1]}".PadRight(displayLength), "", "\n");
+            Utility.WriteMessage($" {numbers[1]}    {numbers[2]}    {numbers[3]}  {operators[0]}".PadRight(displayLength), "", "\n");
+            Utility.WriteMessage($" {numbers[0]}         ,  {operators[4]}".PadRight(displayLength), "", "\n");
+            Utility.WriteMessage(new string('-', displayLength), "", "\n");
             Console.ResetColor();
             
         }

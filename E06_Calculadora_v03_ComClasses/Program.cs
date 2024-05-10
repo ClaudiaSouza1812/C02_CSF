@@ -17,13 +17,14 @@ namespace E06_Calculadora_v03_ComClasses
             
 
             
-
-            Calculator calc01 = new Calculator(05, 100, "3");
+            
+            Calculator calc01 = new Calculator(1000, 0, "4");
 
             calc01.Calculate();
             calc01.ShowResult();
 
             /*
+
             Calculator calc02 = new Calculator();
 
             calc02.Operator = CalculatorUtility.ShowMenu();
@@ -36,8 +37,8 @@ namespace E06_Calculadora_v03_ComClasses
             }
 
             Utility.WriteTitle("See you ;)", "\n");
-
             */
+            
             Utility.TerminateConsole();
             
         }
