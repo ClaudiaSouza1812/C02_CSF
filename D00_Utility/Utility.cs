@@ -73,26 +73,6 @@ namespace D00_Utility
             Console.ReadKey();
         }
 
-        /*public static void CalculatorTemplate(int[] numbers, string[] operators, int result = 0)
-        {
-            Console.BackgroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine(new string('-', 18));
-            Console.WriteLine($"| {numbers[0]} {operators[0]} {result}          |");
-            Console.WriteLine(new string('-', 18));
-            Console.WriteLine($"| AC (+/-)  %  {operators[3]} |");
-            Console.WriteLine($"| {numbers[7]}    {numbers[8]}    {numbers[9]}  {operators[2]} |");
-            Console.WriteLine($"| {numbers[4]}    {numbers[5]}    {numbers[6]}  {operators[1]} |");
-            Console.WriteLine($"| {numbers[1]}    {numbers[2]}    {numbers[3]}  {operators[0]} |");
-            Console.WriteLine($"| {numbers[0]}         ,  {operators[4]} |");
-            Console.WriteLine(new string('-', 18));
-            Console.ResetColor();
-
-            foreach (int item in numbers)
-            {
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.ResetColor();
-            }
-
-        }*/
+        
     }
 }

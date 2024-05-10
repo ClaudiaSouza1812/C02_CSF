@@ -77,5 +77,6 @@ namespace E06_Calculadora_v03_ComClasses
 
             return operation;
         }
+
     }
 }

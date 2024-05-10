@@ -127,10 +127,11 @@ namespace E06_Calculadora_v03_ComClasses
                 case "1":
                     Console.Clear();
                     Utility.WriteTitle("Addition Operation (+)", "\n", "\n\n");
+                    
                     if (Value01 != 0)
                     {
                         Console.Clear();
-                        Utility.WriteTitle("Subtraction Operation (+)", "\n", "\n\n");
+                        Utility.WriteTitle("Addition Operation (+)", "\n", "\n\n");
                         Utility.WriteMessage($"Primeiro valor: {Value01}\nOperador: (+)\nSegundo valor: {Value02}", endMessage: "\n");
                     }
                     break;
@@ -184,8 +185,8 @@ namespace E06_Calculadora_v03_ComClasses
             ShowOperation();
             
             Utility.WriteTitle("Calculator - result", "\n", "\n\n");
-            
-            Utility.WriteMessage($"Resultado: {Result}", endMessage: "\n");
+
+            CalculatorTemplate();
             
         }
 
@@ -199,6 +200,27 @@ namespace E06_Calculadora_v03_ComClasses
 
             Utility.WriteMessage($"Segundo valor: ");
             Value02 = CalculatorUtility.CheckDouble(Console.ReadLine());
+        }
+
+        internal void CalculatorTemplate()
+        {
+            int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            string[] operators = { "+", "-", "*", "/", "=" };
+            int i = Convert.ToInt16(Operator) - 1;
+
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine(new string('-', 18));
+            Console.WriteLine($"| {Value01} {operators[i]} {Value02} = {Result} |");
+            Console.WriteLine(new string('-', 18));
+            Console.WriteLine($"| AC (+/-)  %  {operators[3]} |");
+            Console.WriteLine($"| {numbers[7]}    {numbers[8]}    {numbers[9]}  {operators[2]} |");
+            Console.WriteLine($"| {numbers[4]}    {numbers[5]}    {numbers[6]}  {operators[1]} |");
+            Console.WriteLine($"| {numbers[1]}    {numbers[2]}    {numbers[3]}  {operators[0]} |");
+            Console.WriteLine($"| {numbers[0]}         ,  {operators[4]} |");
+            Console.WriteLine(new string('-', 18));
+            Console.ResetColor();
+            
         }
 
         #endregion
