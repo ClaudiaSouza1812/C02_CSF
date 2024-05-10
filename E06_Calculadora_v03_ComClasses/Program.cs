@@ -18,7 +18,7 @@ namespace E06_Calculadora_v03_ComClasses
 
             
             
-            Calculator calc01 = new Calculator(1000, 0, "4");
+            Calculator calc01 = new Calculator(100, 0, "4");
 
             calc01.Calculate();
             calc01.ShowResult();
