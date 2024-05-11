@@ -12,16 +12,16 @@ namespace E06_Calculadora_v03_ComClasses
         // Método para checar e devolver um double
         internal static double CheckDouble(string input)
         {
-            double reference;
+            double value;
 
-            while (!double.TryParse(input, out reference))
+            while (!double.TryParse(input, out value))
             {
                 Utility.WriteMessage($"Você digitou '{input}', entre um valor numérico ou decimal.", "", "\n");
                 Utility.WriteMessage($"Valor: ");
                 input = Console.ReadLine();
             }
 
-            return reference;
+            return value;
         }
 
         //Método para checar e devolver um operador usando array

@@ -78,12 +78,13 @@ namespace E17_ValorDeVenda_v01
 
         }
 
+        // Método para requisitar ao usuário a inserção do preço, via console, para adição da taxa de IVA a 23%.
         internal void AskPrice()
         {
-            Utility.WriteTitle("Calcule o seu valor de venda acrescido da taxa de IVA a 23%.", "", "\n");
+            Utility.WriteTitle("Calcule o seu preço de venda acrescido da taxa de IVA a 23%.", "", "\n\n");
 
             Utility.WriteMessage("Insira o preço base: ");
-            Value = Console.ReadLine();
+            Value = PriceUtility.CheckDouble(Console.ReadLine());
         }
 
         internal void ShowPrice()

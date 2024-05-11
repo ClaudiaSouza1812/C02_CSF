@@ -15,9 +15,9 @@ namespace E17_ValorDeVenda_v01
 
             Utility.SetUnicodeConsole();
 
-            
+            Price price01 = new Price();
 
-            
+            price01.AskPrice();
 
 
 
