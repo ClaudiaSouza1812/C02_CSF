@@ -77,8 +77,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D15_Collections_ArrayList",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E17_ValorDeVenda_v01", "E17_ValorDeVenda_v01\E17_ValorDeVenda_v01.csproj", "{1F80098A-FE4E-4AE1-9185-B50B7CFAC8CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E06_Calculadora_v02_ComClasses", "E06_Calculadora_v02_ComClasses\E06_Calculadora_v02_ComClasses.csproj", "{6EA07EA9-54C0-4276-9EE9-527DC5BAD338}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -233,10 +231,6 @@ Global
 		{1F80098A-FE4E-4AE1-9185-B50B7CFAC8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F80098A-FE4E-4AE1-9185-B50B7CFAC8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F80098A-FE4E-4AE1-9185-B50B7CFAC8CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EA07EA9-54C0-4276-9EE9-527DC5BAD338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EA07EA9-54C0-4276-9EE9-527DC5BAD338}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EA07EA9-54C0-4276-9EE9-527DC5BAD338}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EA07EA9-54C0-4276-9EE9-527DC5BAD338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
