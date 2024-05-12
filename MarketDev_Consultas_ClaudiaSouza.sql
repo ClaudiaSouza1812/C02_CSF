@@ -31,6 +31,30 @@ ORDER BY
 	s.SubcategoryName;
 GO
 
+-- corrigido com COALESCE:
+
+
+SELECT
+	COALESCE(p.Color, '<...>') AS 'Color',
+	c.CategoryName AS 'Category',
+	s.SubcategoryName AS 'Subcategory',
+	p.ProductName AS 'Product',
+	LOWER(COALESCE(p.SizeUnitMeasureCode, '')) AS 'Size unit'
+FROM
+	[Marketing].[Product] AS p
+INNER JOIN
+	[Marketing].[Subcategory] AS s
+ON
+	p.SubcategoryID = s.SubcategoryID
+INNER JOIN
+	[Marketing].[Category] AS c
+ON
+	s.CategoryID = c.CategoryID
+ORDER BY
+	p.Color,
+	c.CategoryName,
+	s.SubcategoryName;
+GO
 
 -- 22. Listagem do tempo de venda dos produtos (86 registos; consulte o ficheiro de resultados):
 -- Resultado: 86 -- ok
@@ -131,7 +155,7 @@ GO
 -- 26. Prospetores que têm de atualizar, por telefone, o email (5.189 registos; consulte o ficheiro de resultados):
 -- Resultado: 5189 -- ok
 
-
+-- entregue:
 SELECT
 	CONCAT_WS(' ', p.FirstName, p.MiddleName, p.LastName) AS 'Prospecter',
 	IIF(p.CellPhoneNumber IS NOT NULL, p.CellPhoneNumber, 
@@ -147,9 +171,24 @@ ORDER BY
 	'Prospecter';
 GO
 
+-- correção usando COALESCE:
+ 
+SELECT
+	CONCAT_WS(' ', p.FirstName, p.MiddleName, p.LastName) AS 'Prospecter',
+	COALESCE(p.CellPhoneNumber, p.HomePhoneNumber, p.WorkPhoneNumber) AS 'Contact number',
+	COALESCE(p.EmailAddress, '<to be updated>') AS 'E-mail'
+FROM
+	[Marketing].[Prospect] AS p
+WHERE
+	p.EmailAddress IS NULL
+ORDER BY
+	'Prospecter';
+GO
+
 
 -- 27. Quais os modelos que não têm produtos (1 registo):
 -- Resultado: 1 -- ok
+-- tras todos os resultados da tabela da esquerda (ProductModel) em que o ProductModelID seja igual na segunda tabela, ProductDescription. Neste caso, Rear brakes é retornado como único modelo que não possui produto na tabela ProductDescription, e como não há produto, não pode haver descrição, desta forma a coluna vazia é retornada com o valor de NULL.
 
 
 SELECT

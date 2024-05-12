@@ -6,9 +6,12 @@ GO
 
 
 -- 12. Faça uma consulta de forma a produzir um resultado 'semelhante' à imagem do formulário em papel.
--- Usando IIF para deixar as linhas 2 e 3 em branco apenas onde há repetição de dados.
--- Usando a função ROW_NUBER para retornar o número de cada linha usando o conjunto de resultados da cláusula OVER como input.
--- Usando cláusula OVER, que define um conjunto de linhas especificado pelo usuário (ORDER BY) em um conjunto de resultados de consulta para ROW_NUMBER
+
+-- Usando a função ROW_NUBER junto com a cláusula OVER;
+-- OVER devolve um conjunto de linhas ordenadas por vacationID (ORDER BY) para a função ROW_NUMBER;
+-- ROW_NUMBER numera cada linha usando do resultado da cláusula OVER;
+-- Usando IIF para deixar as linhas 2 e 3 em branco apenas onde há repetição de dados, ou seja,
+-- se o número da linha for 1, mostra as 8 primeiras informações, se a linha não for 1, mostrar um string vazia
 
 
 SELECT

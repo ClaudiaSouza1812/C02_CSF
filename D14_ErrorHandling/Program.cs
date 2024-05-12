@@ -29,6 +29,8 @@ namespace D14_ErrorHandling
             // use em teste, mas não em produção, jamais no produto final
             try
             {
+                bool teste = false;
+                string texto = "qaz";
                 int number02;
 
                 Utility.WriteMessage("Insira o número: ");
