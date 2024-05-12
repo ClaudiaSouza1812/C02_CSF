@@ -14,14 +14,21 @@ namespace E17_ValorDeVenda_v01
             // Escrever um programa que leia o preço base de um determinado produto e calcule o seu valor de venda ao público(ou seja, valor acrescido da taxa de IVA a 23 %).
 
             Utility.SetUnicodeConsole();
-
+            
             Price price01 = new Price();
 
-            price01.AskPrice();
+            price01.Value = 10;
+            price01.ShowPrice();
 
+            Price price02 = new Price();
+            
+            price02.AskPrice();
+            price02.ShowPrice();
+            
+            Price price03 = new Price(15);
 
-
-
+            price03.ShowPrice();
+            
             Utility.TerminateConsole();
         }
     }

@@ -22,9 +22,9 @@ namespace E17_ValorDeVenda_v01
         Exemplo de uma propriedade usando Auto-implemented properties
         internal string Operators { get; set; } // Todo MRS: propriedade no singular
         */
-        double Value { get; set; }
-        int Iva { get; set; }
-        double Result { get; set; }
+        internal double Value { get; set; }
+        internal int Iva { get; set; }
+        internal double Result { get; set; }
         #endregion
 
         #region Classic properties 1.0
@@ -55,18 +55,17 @@ namespace E17_ValorDeVenda_v01
 
         #region Constructors (Public)
         // Fazer substituto do default constructor
-        public Price()
+        internal Price()
         {
             Value = 0;
-            Iva = 0;
+            Iva = 23;
             Result = 0;
         }
 
         // Fazer segundo construtor com inserção parâmetros obrigatórios
-        public Price(double value, int iva)
+        internal Price(double value)
         {
             Value = value;
-            Iva = iva;
         }
 
         #endregion
@@ -75,13 +74,14 @@ namespace E17_ValorDeVenda_v01
 
         internal void CalculatePrice()
         {
-
+            Iva = 23;
+            Result = Value + (Value * Iva / 100);
         }
 
         // Método para requisitar ao usuário a inserção do preço, via console, para adição da taxa de IVA a 23%.
         internal void AskPrice()
         {
-            Utility.WriteTitle("Calcule o seu preço de venda acrescido da taxa de IVA a 23%.", "", "\n\n");
+            Utility.WriteTitle("Calcule o seu preço de venda acrescido da taxa de IVA a 23%.", "\n", "\n\n");
 
             Utility.WriteMessage("Insira o preço base: ");
             Value = PriceUtility.CheckDouble(Console.ReadLine());
@@ -89,7 +89,12 @@ namespace E17_ValorDeVenda_v01
 
         internal void ShowPrice()
         {
+            Utility.WriteTitle("Price - Result", "\n", "\n\n");
 
+            CalculatePrice();
+
+            Utility.WriteMessage($"O preço de venda é: {Result}", "", "\n");
+            
         }
         #endregion
 
