@@ -53,7 +53,7 @@ namespace E17_ValorDeVenda_v01_ComClasses
         #endregion
         #endregion
 
-        #region Constructors (Public)
+        #region Constructors (public or internal)
         // Fazer substituto do default constructor
         internal Price()
         {
