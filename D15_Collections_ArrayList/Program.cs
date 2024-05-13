@@ -37,7 +37,7 @@ namespace D15_Collections_ArrayList
                 listIntegers.Add(i);
             }
 
-            // listIntegers.Add("Vou dar cabo desta lista!");  // Mostra a vulnerabilidade da arra list
+            // listIntegers.Add("Vou dar cabo desta lista!");  // Mostra a vulnerabilidade da array list
             listIntegers.Add(-30);
             listIntegers.Add(19);
 

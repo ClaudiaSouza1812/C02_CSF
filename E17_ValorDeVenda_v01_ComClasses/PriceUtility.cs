@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using D00_Utility;
 
-namespace E17_ValorDeVenda_v01
+namespace E17_ValorDeVenda_v01_ComClasses
 {
     internal class PriceUtility
     {

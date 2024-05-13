@@ -75,7 +75,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E06_CalculadoraMRS_v02_ComC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D15_Collections_ArrayList", "D15_Collections_ArrayList\D15_Collections_ArrayList.csproj", "{1A7EA65A-BEFB-4AFB-8002-BD668CCE2BDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E17_ValorDeVenda_v01", "E17_ValorDeVenda_v01\E17_ValorDeVenda_v01.csproj", "{1F80098A-FE4E-4AE1-9185-B50B7CFAC8CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E17_ValorDeVenda_v01_ComClasses", "E17_ValorDeVenda_v01\E17_ValorDeVenda_v01_ComClasses.csproj", "{1F80098A-FE4E-4AE1-9185-B50B7CFAC8CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E06_Calculadora_v02_ComClasses", "E06_Calculadora_v02_ComClasses\E06_Calculadora_v02_ComClasses.csproj", "{6EA07EA9-54C0-4276-9EE9-527DC5BAD338}"
 EndProject
