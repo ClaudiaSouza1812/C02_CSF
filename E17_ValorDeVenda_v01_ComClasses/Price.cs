@@ -75,7 +75,7 @@ namespace E17_ValorDeVenda_v01_ComClasses
         internal void CalculatePrice()
         {
             Iva = 23;
-            Result = Value + (Value * Iva / 100);
+            Result = Value + (Value * Iva);
         }
 
         // Método para requisitar ao usuário a inserção do preço, via console, para adição da taxa de IVA a 23%.
