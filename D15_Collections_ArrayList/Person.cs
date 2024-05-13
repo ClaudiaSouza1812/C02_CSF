@@ -63,9 +63,9 @@ namespace D15_Collections_ArrayList
         #endregion
         #endregion
 
-        #region Constructors (Public)
+        #region Constructors (public or internal)
         // Fazer substituto do default constructor
-        
+
         internal Person()
         {
             Name = string.Empty;
