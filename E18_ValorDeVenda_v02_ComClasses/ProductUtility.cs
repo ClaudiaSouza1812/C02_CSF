@@ -26,12 +26,16 @@ namespace E18_ValorDeVenda_v02_ComClasses
 
         internal static string CheckString(string input) 
         { 
-            string value;
-
-            while (input )
+            while (string.IsNullOrEmpty(input) || input.All(c => !char.IsLetter(c)))
             {
-                
+                Console.Clear();
+                Utility.WriteTitle("Ler o valor base e o iva de um produto e calcular o valor final", "\n", "\n\n");
+                Utility.WriteMessage("Digite um nome válido, sem números ou simbolos", "", "\n");
+                Utility.WriteMessage("Nome: ");
+                input = Console.ReadLine();
             }
+            
+            return input;
         }
     }
 }

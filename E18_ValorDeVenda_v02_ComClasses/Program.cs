@@ -40,10 +40,18 @@ namespace E18_ValorDeVenda_v02_ComClasses
             productList.Add(product01);
             productList.Add(product02);
 
-            Product.ListProduct(productList);
+            // Product.ListProduct(productList);
 
             Product product03 = new Product();
+
             product03.AskProduct();
+
+            product03.CalculatePrice();
+
+            productList.Add(product03);
+
+            Product.ListProduct(productList);
+
             
 
             Utility.TerminateConsole();
