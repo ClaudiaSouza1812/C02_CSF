@@ -30,7 +30,7 @@ namespace D18_CollectionsGeneric_Stack
 
             foreach (int item in stackIntegers)
             {
-                Utility.WriteMessage(item.ToString(), "\n");
+                Utility.WriteMessage(item.ToString(), "\n");    // 3, 2, 1, 0
             }
 
             Utility.WriteTitle("Pop", "\n", "\n");
@@ -39,7 +39,7 @@ namespace D18_CollectionsGeneric_Stack
 
             for (int i = 0; i < countStack; i++)
             {
-                Utility.WriteMessage($"{stackIntegers.Pop()}", "\n");
+                Utility.WriteMessage($"{stackIntegers.Pop()}", "\n");   // 3, 2, 1, 0
             }
 
             #endregion
