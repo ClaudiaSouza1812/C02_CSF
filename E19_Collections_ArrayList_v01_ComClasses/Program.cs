@@ -18,21 +18,21 @@ namespace E19_Collections_ArrayList_v01_ComClasses
 
             ArrayList listPerson = new ArrayList();
 
-            string answer;
+            string answer, name;
             int id = 1;
 
             do
             {
                 Utility.WriteMessage("Name: ");
-                string name = Console.ReadLine();
+                name = Console.ReadLine();
                 Person person = new Person(name, id++);
 
                 listPerson.Add(person);
 
                 Utility.WriteMessage("Continue (y/n)? ");
-                answer = Console.ReadLine();
+                answer = Console.ReadLine().ToLower();
 
-            } while (answer != "Y".ToLower()); 
+            } while (answer == "y"); 
 
             Person.ListPerson(listPerson);
 
