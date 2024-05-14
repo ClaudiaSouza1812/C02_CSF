@@ -56,6 +56,8 @@ namespace D19_CollectionsGeneric_Dictionary
 
             #endregion
             Utility.TerminateConsole();
+
+            
         }
     }
 }
