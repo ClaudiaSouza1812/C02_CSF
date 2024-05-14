@@ -13,7 +13,9 @@ namespace D17_CollectionsGeneric_Queue
         {
             Utility.SetUnicodeConsole();
 
-            #region Queue (fila - FIFO)
+            #region Queue<T>: fila - FIFO (first-in-first-out)
+
+            Utility.WriteTitle("Queue<T>: fila - FIFO (first-in-first-out)", "\n", "\n");
 
             Queue<int> queueIntegers = new Queue<int>();
 
@@ -41,31 +43,7 @@ namespace D17_CollectionsGeneric_Queue
                 Utility.WriteMessage($"{queueIntegers.Dequeue()}", "\n");
             }
 
-            Stack<int> stackIntegers = new Stack<int>();
-
-            stackIntegers.Push(0);
-            stackIntegers.Push(1);
-
-            for (int i = 2; i < 4; i++)
-            {
-                stackIntegers.Push(i);
-            }
-
-            Utility.WriteTitle("Push", "\n", "\n");
-
-            foreach (int item in stackIntegers)
-            {
-                Utility.WriteMessage(item.ToString(), "\n");
-            }
-
-            Utility.WriteTitle("Pop", "\n", "\n");
-
-            int countStack = stackIntegers.Count;
-
-            for (int i = 0; i < countStack; i++)
-            {
-                Utility.WriteMessage($"{stackIntegers.Pop()}", "\n");
-            }
+            
             #endregion
 
             Utility.TerminateConsole();
