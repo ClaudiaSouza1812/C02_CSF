@@ -19,6 +19,7 @@ namespace E18_ValorDeVenda_v02_ComClasses
 
         #endregion
         #region Auto-implemented properties 2.0
+        // Properties with internal use only
         internal string Name { get; set; }
         internal double Price { get; set; }
         internal double Iva { get; set; }
@@ -51,12 +52,14 @@ namespace E18_ValorDeVenda_v02_ComClasses
 
         #region Methods (public or internal)
 
+        // it can only be called by the classes within the same project and by the  
         internal void CalculatePrice()
         {
             Result = Price + (Price * Iva / 100);
         }
-         
 
+        // it can only be called by the classes within the same project
+        // it cant be called by the object instance, only by its own class, like: Product.ListProduct(list)
         internal static void ListProduct(ArrayList productList)
         {
             Utility.WriteTitle("Ler o valor base e o iva de um produto e calcular o valor final", "\n", "\n\n");
