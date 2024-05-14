@@ -60,8 +60,6 @@ namespace E18_ValorDeVenda_v02_ComClasses
             // Mostre a lista de produtos armazenados
             Product.ListProduct(productList);
 
-            
-
             Utility.TerminateConsole();
         }
     }
