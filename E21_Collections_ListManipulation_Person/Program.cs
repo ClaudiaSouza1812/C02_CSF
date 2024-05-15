@@ -25,7 +25,24 @@ namespace E21_Collections_ListManipulation_Person
             */
             Utility.SetUnicodeConsole();
 
+            Utility.WriteTitle("List Manipulation - Person", "", "\n");
 
+            List<Person> personsList = new List<Person>()
+            { 
+                new Person()
+                {
+                    Name = "Claudia"
+                }
+            
+            };
+
+            Person person = new Person();
+            person.Name = "Paula";
+            personsList.Add(person);
+
+            personsList.Add(new Person("Ana"));
+
+            Person.ListPerson(personsList);
 
 
             Utility.TerminateConsole();

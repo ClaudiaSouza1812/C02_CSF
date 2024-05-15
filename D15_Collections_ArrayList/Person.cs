@@ -10,18 +10,18 @@ namespace D15_Collections_ArrayList
 {
     internal class Person
     {
-        /*
-        internal static int NextId { get; set; } = 1;
-        internal int Id { get; set; }
-
-        internal Person(string name)
-        {
-            ID = nextid++;
-            Name = name;
-        }
-        
+        /* 
+            1. add person
+            2. Insert person in position
+            3. Find person by id
+            4. Remove person by id
+            5. Sort list by id
+            6. Sort list by name
+            7. List person
+            8. Exit
 
         */
+
         #region Fields (properties, private variables)
         /*
         variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
