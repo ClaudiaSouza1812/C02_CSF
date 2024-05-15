@@ -79,6 +79,15 @@ namespace E21_Collections_ListManipulation_Person
                     } while (keepGoing == "y");
                     break;
 
+                case "Find person by id":
+                    do
+                    {
+
+                        keepGoing = PersonUtility.KeepGoing();
+
+                    } while (keepGoing == "y");
+                    break;
+
                 default:
                     break;
             }

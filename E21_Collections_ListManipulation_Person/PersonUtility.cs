@@ -99,5 +99,7 @@ namespace E21_Collections_ListManipulation_Person
                 Utility.WriteMessage($"A lista tem {listLength} posições, insira um valor válido.");
             }
         }
+
+
     }
 }
