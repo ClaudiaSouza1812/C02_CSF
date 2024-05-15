@@ -13,7 +13,7 @@ namespace E21_Collections_ListManipulation_Person
         static void Main(string[] args)
         {
             /*
-            "Add person"},
+                {"1", "Add person"},
                 {"2", "Insert person in position" },
                 {"3", "Find person by id" },
                 {"4", "Remove person by id" },
@@ -25,7 +25,7 @@ namespace E21_Collections_ListManipulation_Person
 
             Utility.SetUnicodeConsole();
 
-            Utility.WriteTitle("List Manipulation - Person", "", "\n");
+            
 
             List<Person> personsList = new List<Person>()
             {
@@ -44,53 +44,64 @@ namespace E21_Collections_ListManipulation_Person
             personsList.Add(new Person("Ana"));
             */
             string keepGoing;
-            string option = PersonUtility.ShowMenu();
             string position;
+            string option = PersonUtility.ShowMenu();
 
-            switch (option)
+            do
             {
-                case "Add person":
-                    do
-                    {
-                        Person person = new Person();
+                switch (option)
+                {
+                    case "Add person":
+                        do
+                        {
+                            Person person = new Person();
 
-                        person.AddPerson();
+                            person.AddPerson();
 
-                        personsList.Add(person);
+                            personsList.Add(person);
 
-                        keepGoing = PersonUtility.KeepGoing();
+                            keepGoing = PersonUtility.KeepGoing();
 
-                    } while (keepGoing == "y");
-                    break;
+                        } while (keepGoing == "y");
 
-                case "Insert person in position":
-                    do
-                    {
-                        Person person = new Person();
+                        break;
 
-                        person.AddPerson();
+                    case "Insert person in position":
+                        do
+                        {
+                            Person person = new Person();
 
-                        position = PersonUtility.AddPosition();
+                            person.AddPerson();
 
-                        PersonUtility.InsertInPosition(personsList, person, position);
-                        
-                        keepGoing = PersonUtility.KeepGoing();
+                            position = PersonUtility.CheckPosition();
 
-                    } while (keepGoing == "y");
-                    break;
+                            PersonUtility.InsertInPosition(personsList, person, position);
 
-                case "Find person by id":
-                    do
-                    {
+                            keepGoing = PersonUtility.KeepGoing();
 
-                        keepGoing = PersonUtility.KeepGoing();
+                        } while (keepGoing == "y");
 
-                    } while (keepGoing == "y");
-                    break;
+                        break;
 
-                default:
-                    break;
-            }
+                    case "Find person by id":
+                        do
+                        {
+                            Person.FindPerson(personsList);
+
+                            keepGoing = PersonUtility.KeepGoing();
+
+                        } while (keepGoing == "y");
+                        break;
+
+                    default:
+                        break;
+                }
+
+                option = PersonUtility.ShowMenu();
+
+            } while (option != "Exit");
+
+            
 
 
             

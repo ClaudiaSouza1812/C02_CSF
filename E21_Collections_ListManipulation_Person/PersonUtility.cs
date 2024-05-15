@@ -11,7 +11,9 @@ namespace E21_Collections_ListManipulation_Person
     {
         internal static string ShowMenu()
         {
-            Utility.WriteTitle("Person list", "", "\n\n");
+            Console.Clear();
+            Utility.WriteTitle("List Manipulation - Person", "", "\n");
+            Utility.WriteTitle("Person Menu", "", "\n\n");
 
             string key;
             bool status;
@@ -38,7 +40,7 @@ namespace E21_Collections_ListManipulation_Person
                     Utility.WriteMessage($"({item.Key}) {item.Value}", "", "\n");
                 }
 
-                Utility.WriteMessage("Opção: ");
+                Utility.WriteMessage("Opção: ", "\n");
 
                 key = Console.ReadLine();
 
@@ -56,23 +58,24 @@ namespace E21_Collections_ListManipulation_Person
         {
             string answer;
 
-            Utility.WriteMessage("Continue? (y/n): ");
+            Utility.WriteMessage("Continue? (y/n): ", "\n");
             answer = Console.ReadLine().ToLower();
 
             return answer;
         }
 
 
-        internal static string AddPosition()
+        internal static string CheckPosition()
         {
             int result;
 
             do
             {
                 Console.Clear();
-                Utility.WriteMessage("Digite o número da posição em que deseja inserir a pessoa.", "", "\n");
-
+                Utility.WriteTitle("Add position", "", "\n\n");
+                Utility.WriteMessage("Digite o número da posição em que deseja inserir a pessoa.", "", "\n\n");
                 Utility.WriteMessage("Número: ");
+
             } while (!int.TryParse(Console.ReadLine(), out result));
 
 
@@ -96,10 +99,25 @@ namespace E21_Collections_ListManipulation_Person
             }
             else
             {
-                Utility.WriteMessage($"A lista tem {listLength} posições, insira um valor válido.");
+                Utility.WriteMessage($"A lista tem {listLength} posições, insira um valor válido.", "\n", "\n");
             }
         }
 
+        internal static int CheckId()
+        {
+            int result;
+
+            do
+            {
+                Console.Clear();
+                Utility.WriteTitle("Digite o número do ID", "", "\n\n");
+                Utility.WriteMessage("Número: ");
+                
+
+            } while (!int.TryParse(Console.ReadLine(), out result));
+
+            return result;
+        }
 
     }
 }

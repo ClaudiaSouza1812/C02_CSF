@@ -103,7 +103,29 @@ namespace E21_Collections_ListManipulation_Person
 
         }
 
-        
+        internal static void FindPerson(List<Person> list)
+        {
+            Utility.WriteTitle("Find person by id", "\n", "\n\n");
+
+            int id = PersonUtility.CheckId();
+            bool found = false;
+
+            foreach (Person item in list)
+            {
+                if (item.Id == id)
+                {
+                    Utility.WriteMessage($"O ID: {item.Id} pertence a: {item.Name}", "", "\n");
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                Utility.WriteMessage("O ID digitado não existe", "", "\n");
+            }
+            
+        }
 
         #endregion
 
