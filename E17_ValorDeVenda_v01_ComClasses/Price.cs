@@ -1,33 +1,19 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using D00_Utility;
 
-namespace D15_Collections_ArrayList
+namespace E17_ValorDeVenda_v01_ComClasses
 {
-    internal class Person
+    internal class Price
     {
-        /* 
-            1. Add person
-            2. Insert person in position
-            3. Find person by id
-            4. Remove person by id
-            5. Sort list by id
-            6. Sort list by name
-            7. List person
-            8. Exit
-
-        */
-
         #region Fields (properties, private variables)
         /*
         variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
         */
-        private string name, city;
-        
+
         #endregion
 
         #region Properties (public or internal)
@@ -36,7 +22,9 @@ namespace D15_Collections_ArrayList
         Exemplo de uma propriedade usando Auto-implemented properties
         internal string Operators { get; set; } // Todo MRS: propriedade no singular
         */
-
+        internal double Value { get; set; }
+        internal int Iva { get; set; }
+        internal double Result { get; set; }
         #endregion
 
         #region Classic properties 1.0
@@ -50,11 +38,6 @@ namespace D15_Collections_ArrayList
         }
         */
 
-        internal string Name
-        { 
-            get { return name; }
-            set { name = value; }
-        }
         #endregion
 
         #region Bodied-expression properties 3.0
@@ -67,43 +50,52 @@ namespace D15_Collections_ArrayList
         }
         */
 
-        internal string City
-        {
-            get => city;
-            set => city = value;
-        }
         #endregion
         #endregion
 
         #region Constructors (public or internal)
         // Fazer substituto do default constructor
-
-        internal Person()
+        internal Price()
         {
-            Name = string.Empty;
-            City = string.Empty;
+            Value = 0;
+            Iva = 23;
+            Result = 0;
         }
 
         // Fazer segundo construtor com inserção parâmetros obrigatórios
-
-        internal Person(string name, string city)
+        internal Price(double value)
         {
-            Name = name;
-            City = city;
+            Value = value;
         }
 
         #endregion
 
         #region Methods (public or internal)
 
-        internal static void ListPerson(ArrayList list)
+        internal void CalculatePrice()
         {
-            foreach (Person item in list)
-            {
-                Utility.WriteMessage($"{item.Name}, {item.City}", "", "\n");
-            }
+            Iva = 23;
+            Result = Value + (Value * Iva / 100);
         }
 
+        // Método para requisitar ao usuário a inserção do preço, via console, para adição da taxa de IVA a 23%.
+        internal void AskPrice()
+        {
+            Utility.WriteTitle("Calcule o seu preço de venda acrescido da taxa de IVA a 23%.", "\n", "\n\n");
+
+            Utility.WriteMessage("Insira o preço base: ");
+            Value = PriceUtility.CheckDouble(Console.ReadLine());
+        }
+
+        internal void ShowPrice()
+        {
+            Utility.WriteTitle("Price - Result", "\n", "\n\n");
+
+            CalculatePrice();
+
+            Utility.WriteMessage($"O preço de venda é: {Result}", "", "\n");
+            
+        }
         #endregion
 
         #region Destructor

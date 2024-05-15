@@ -1,33 +1,23 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Deployment.Internal;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using D00_Utility;
 
-namespace D15_Collections_ArrayList
+namespace E19_Collections_ArrayList_v01_ComClasses
 {
     internal class Person
     {
-        /* 
-            1. Add person
-            2. Insert person in position
-            3. Find person by id
-            4. Remove person by id
-            5. Sort list by id
-            6. Sort list by name
-            7. List person
-            8. Exit
-
-        */
 
         #region Fields (properties, private variables)
         /*
         variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
         */
-        private string name, city;
         
+
         #endregion
 
         #region Properties (public or internal)
@@ -37,6 +27,8 @@ namespace D15_Collections_ArrayList
         internal string Operators { get; set; } // Todo MRS: propriedade no singular
         */
 
+        int Id { get; set; }
+        string Name { get; set; }
         #endregion
 
         #region Classic properties 1.0
@@ -50,11 +42,7 @@ namespace D15_Collections_ArrayList
         }
         */
 
-        internal string Name
-        { 
-            get { return name; }
-            set { name = value; }
-        }
+        
         #endregion
 
         #region Bodied-expression properties 3.0
@@ -67,11 +55,7 @@ namespace D15_Collections_ArrayList
         }
         */
 
-        internal string City
-        {
-            get => city;
-            set => city = value;
-        }
+        
         #endregion
         #endregion
 
@@ -80,27 +64,35 @@ namespace D15_Collections_ArrayList
 
         internal Person()
         {
+            Id = 0;        
             Name = string.Empty;
-            City = string.Empty;
         }
 
         // Fazer segundo construtor com inserção parâmetros obrigatórios
 
-        internal Person(string name, string city)
+        internal Person(string name, int id)
         {
             Name = name;
-            City = city;
+            Id = id;
         }
 
         #endregion
 
         #region Methods (public or internal)
 
+        internal void AskPerson()
+        {
+            Utility.WriteMessage("Name: ");
+            Name = Console.ReadLine();
+        }
+
         internal static void ListPerson(ArrayList list)
         {
+            Utility.WriteTitle("Person - list", "\n", "\n\n");
+
             foreach (Person item in list)
             {
-                Utility.WriteMessage($"{item.Name}, {item.City}", "", "\n");
+                Utility.WriteMessage($"{item.Id}, {item.Name}", "", "\n");
             }
         }
 
@@ -109,5 +101,8 @@ namespace D15_Collections_ArrayList
         #region Destructor
 
         #endregion
+
+
+
     }
 }

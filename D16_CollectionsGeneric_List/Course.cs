@@ -6,28 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using D00_Utility;
 
-namespace D15_Collections_ArrayList
+namespace D16_CollectionsGeneric_List
 {
-    internal class Person
+    internal class Course
     {
-        /* 
-            1. Add person
-            2. Insert person in position
-            3. Find person by id
-            4. Remove person by id
-            5. Sort list by id
-            6. Sort list by name
-            7. List person
-            8. Exit
-
-        */
-
         #region Fields (properties, private variables)
         /*
         variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
         */
-        private string name, city;
         
+
         #endregion
 
         #region Properties (public or internal)
@@ -37,6 +25,9 @@ namespace D15_Collections_ArrayList
         internal string Operators { get; set; } // Todo MRS: propriedade no singular
         */
 
+        internal string Code { get; set; }
+        internal string Area { get; set; }  
+        internal string Title { get; set; } 
         #endregion
 
         #region Classic properties 1.0
@@ -50,11 +41,7 @@ namespace D15_Collections_ArrayList
         }
         */
 
-        internal string Name
-        { 
-            get { return name; }
-            set { name = value; }
-        }
+        
         #endregion
 
         #region Bodied-expression properties 3.0
@@ -67,46 +54,42 @@ namespace D15_Collections_ArrayList
         }
         */
 
-        internal string City
-        {
-            get => city;
-            set => city = value;
-        }
+        
         #endregion
         #endregion
 
         #region Constructors (public or internal)
         // Fazer substituto do default constructor
 
-        internal Person()
+        internal Course()
         {
-            Name = string.Empty;
-            City = string.Empty;
+            Code = string.Empty;
+            Area = string.Empty;
+            Title = string.Empty;
         }
 
         // Fazer segundo construtor com inserção parâmetros obrigatórios
 
-        internal Person(string name, string city)
+        internal Course(string code, string area, string title)
         {
-            Name = name;
-            City = city;
+            Code = code;
+            Area = area;
+            Title = title;
         }
 
         #endregion
 
         #region Methods (public or internal)
 
-        internal static void ListPerson(ArrayList list)
+        internal static void ListCourse(List<Course> list)
         {
-            foreach (Person item in list)
+            Utility.WriteTitle("List<course>", "\n", "\n\n");
+
+            foreach (Course item in list)
             {
-                Utility.WriteMessage($"{item.Name}, {item.City}", "", "\n");
+                Utility.WriteMessage($"Course: {item.Code}, {item.Area}, {item.Title}", "", "\n");
             }
         }
-
-        #endregion
-
-        #region Destructor
 
         #endregion
     }

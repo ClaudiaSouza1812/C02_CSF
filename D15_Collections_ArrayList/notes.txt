@@ -14,11 +14,22 @@ Arrays
     Matrizes (multi dimension)
 
 Collections
-    Normal
-    Generic
+    ArrayList
+        Normal
+        Generic
 
 -----------------------------
 ARRAYLIST
 -----------------------------
 Arraylist é fracamente tipada (weakly typed)
     Pode conter qualquer tipo de dados
+
+GENERIC COLLECTIONS
+    fortemente tipada
+    constraint do data type
+
+    List<T>
+    Queue<T>: fila - FIFO (first-in-first-out)
+    Stack<T>: pilha - LIFO (last-in-first-out)
+
+

@@ -1,18 +1,21 @@
-﻿using System;
+﻿using D00_Utility;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using D00_Utility;
 
-namespace E17_ValorDeVenda_v01
+namespace E21_Collections_ListManipulation_Person
 {
-    internal class Price
+    internal class Person
     {
+        
         #region Fields (properties, private variables)
         /*
         variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
         */
+        private string name;
 
         #endregion
 
@@ -22,9 +25,9 @@ namespace E17_ValorDeVenda_v01
         Exemplo de uma propriedade usando Auto-implemented properties
         internal string Operators { get; set; } // Todo MRS: propriedade no singular
         */
-        internal double Value { get; set; }
-        internal int Iva { get; set; }
-        internal double Result { get; set; }
+
+        internal int Id { get; }
+        internal static int NextId { get; set; } = 1;
         #endregion
 
         #region Classic properties 1.0
@@ -38,6 +41,11 @@ namespace E17_ValorDeVenda_v01
         }
         */
 
+        internal string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
         #endregion
 
         #region Bodied-expression properties 3.0
@@ -49,53 +57,51 @@ namespace E17_ValorDeVenda_v01
             set => value02 = value;
         }
         */
-
         #endregion
         #endregion
 
-        #region Constructors (Public)
+        #region Constructors (public or internal)
         // Fazer substituto do default constructor
-        internal Price()
+
+        internal Person()
         {
-            Value = 0;
-            Iva = 23;
-            Result = 0;
+            Id = NextId++;
+            Name = string.Empty;
         }
 
         // Fazer segundo construtor com inserção parâmetros obrigatórios
-        internal Price(double value)
+
+        internal Person(string name)
         {
-            Value = value;
+            Id = NextId++;
+            Name = name;
         }
 
         #endregion
 
         #region Methods (public or internal)
 
-        internal void CalculatePrice()
+        internal static void ListPerson(List<Person> list)
         {
-            Iva = 23;
-            Result = Value + (Value * Iva / 100);
+            Utility.WriteTitle("Person - List", "\n", "\n\n");
+
+            foreach (Person item in list)
+            {
+                Utility.WriteMessage($"Id: {item.Id}, Name: {item.Name}", "", "\n");
+            }
         }
 
-        // Método para requisitar ao usuário a inserção do preço, via console, para adição da taxa de IVA a 23%.
-        internal void AskPrice()
+        internal void AddPerson()
         {
-            Utility.WriteTitle("Calcule o seu preço de venda acrescido da taxa de IVA a 23%.", "\n", "\n\n");
+            Console.Clear();
+            Utility.WriteTitle("Add a Person", "\n", "\n\n");
 
-            Utility.WriteMessage("Insira o preço base: ");
-            Value = PriceUtility.CheckDouble(Console.ReadLine());
+            Utility.WriteMessage("Name: ");
+
+            Name = Console.ReadLine();
+
         }
 
-        internal void ShowPrice()
-        {
-            Utility.WriteTitle("Price - Result", "\n", "\n\n");
-
-            CalculatePrice();
-
-            Utility.WriteMessage($"O preço de venda é: {Result}", "", "\n");
-            
-        }
         #endregion
 
         #region Destructor

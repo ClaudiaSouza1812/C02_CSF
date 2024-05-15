@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("E17_ValorDeVenda_v01")]
+[assembly: AssemblyTitle("E19_Collections_ArrayList_v01_ComClasses")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("E17_ValorDeVenda_v01")]
+[assembly: AssemblyProduct("E19_Collections_ArrayList_v01_ComClasses")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1f80098a-fe4e-4ae1-9185-b50b7cfac8ca")]
+[assembly: Guid("1283b00f-8ae9-49dd-b2a3-2757a28a5720")]
 
 // Version information for an assembly consists of the following four values:
 //
