@@ -36,11 +36,30 @@ namespace E21_Collections_ListManipulation_Person
             
             };
 
+            /*
             Person person = new Person();
             person.Name = "Paula";
             personsList.Add(person);
 
             personsList.Add(new Person("Ana"));
+            */
+
+            string choice;
+
+            do
+            {
+                Person person = new Person();
+
+                person.AddPerson();
+                
+                personsList.Add(person);
+
+                Utility.WriteMessage("Continue? (y/n): ");
+                choice = Console.ReadLine().ToLower();
+
+            } while (choice == "y");
+
+            
 
             Person.ListPerson(personsList);
 

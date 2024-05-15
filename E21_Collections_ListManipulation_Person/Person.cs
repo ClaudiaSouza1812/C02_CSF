@@ -91,6 +91,17 @@ namespace E21_Collections_ListManipulation_Person
             }
         }
 
+        internal void AddPerson()
+        {
+            Console.Clear();
+            Utility.WriteTitle("Add a Person", "\n", "\n\n");
+
+            Utility.WriteMessage("Name: ");
+
+            Name = Console.ReadLine();
+
+        }
+
         #endregion
 
         #region Destructor

@@ -11,7 +11,7 @@ namespace D15_Collections_ArrayList
     internal class Person
     {
         /* 
-            1. add person
+            1. Add person
             2. Insert person in position
             3. Find person by id
             4. Remove person by id
