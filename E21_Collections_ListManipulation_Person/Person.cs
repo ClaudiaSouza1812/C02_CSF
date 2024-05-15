@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -101,6 +102,8 @@ namespace E21_Collections_ListManipulation_Person
             Name = Console.ReadLine();
 
         }
+
+        
 
         #endregion
 
