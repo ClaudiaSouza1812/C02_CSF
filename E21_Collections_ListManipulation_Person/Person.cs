@@ -84,6 +84,8 @@ namespace E21_Collections_ListManipulation_Person
 
         internal static void ListPerson(List<Person> list)
         {
+            Console.Clear();
+
             Utility.WriteTitle("Person - List", "\n", "\n\n");
 
             foreach (Person item in list)
@@ -100,33 +102,85 @@ namespace E21_Collections_ListManipulation_Person
             Utility.WriteMessage("Name: ");
 
             Name = Console.ReadLine();
-
         }
 
-        internal static void FindPerson(List<Person> list)
+        internal static Person FindId(List<Person> list)
         {
-            Utility.WriteTitle("Find person by id", "\n", "\n\n");
-
             int id = PersonUtility.CheckId();
-            bool found = false;
 
             foreach (Person item in list)
             {
                 if (item.Id == id)
                 {
-                    Utility.WriteMessage($"O ID: {item.Id} pertence a: {item.Name}", "", "\n");
-                    found = true;
-                    break;
+                    return item;
                 }
             }
 
-            if (!found)
-            {
-                Utility.WriteMessage("O ID digitado não existe", "", "\n");
-            }
-            
+            return null;
         }
 
+        internal static void FindPerson(List<Person> list)
+        {
+            Person person = FindId(list);
+
+            Utility.WriteTitle("Find person by id", "\n", "\n\n");
+
+            if (person != null)
+            {
+                Utility.WriteMessage($"O ID ({person.Id}) pertence a ({person.Name}).", "", "\n\n");
+            }
+            else
+            {
+                Utility.WriteMessage("O ID digitado não existe", "", "\n\n");
+            }
+        }
+
+        internal static void RemovePerson(List<Person> list)
+        {
+            Person person = FindId(list);
+
+            Utility.WriteTitle("Remove person by id", "\n", "\n\n");
+
+            if (person != null)
+            {
+                Utility.WriteMessage($"A pessoa ({person.Name}) com o ID ({person.Id}) foi removida com sucesso.", "", "\n\n");
+                list.Remove(person);
+            }
+            else
+            {
+                Utility.WriteMessage("O ID digitado não existe", "", "\n\n");
+            }
+        }
+
+        internal static void SortId(List<Person> list)
+        {
+            Utility.WriteTitle("Sort list by id", "\n", "\n\n");
+
+            if (list.Count() > 0)
+            {
+                list.Sort((person1, person2) => person1.Id.CompareTo(person2.Id));
+                ListPerson(list);
+            }
+            else
+            {
+                Utility.WriteMessage("A lista está vazia", "", "\n\n");
+            }
+        }
+
+        internal static void SortName(List<Person> list)
+        {
+            Utility.WriteTitle("Sort list by Name", "\n", "\n\n");
+
+            if (list.Count() > 0)
+            {
+                list.Sort((person1, person2) => person1.Name.CompareTo(person2.Name));
+                ListPerson(list);
+            }
+            else
+            {
+                Utility.WriteMessage("A lista está vazia", "", "\n\n");
+            }
+        }
         #endregion
 
         #region Destructor

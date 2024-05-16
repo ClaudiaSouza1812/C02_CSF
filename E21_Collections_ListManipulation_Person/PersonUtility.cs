@@ -33,6 +33,8 @@ namespace E21_Collections_ListManipulation_Person
 
             do
             {
+                
+
                 Utility.WriteMessage("Escolha o número de uma das seguintes opções: ", endMessage: "\n\n");
 
                 foreach (KeyValuePair<string, string> item in dictMenu)
@@ -47,6 +49,9 @@ namespace E21_Collections_ListManipulation_Person
                 status = dictMenu.TryGetValue(key, out choice);
 
                 Console.Clear();
+
+                Utility.WriteTitle("List Manipulation - Person", "", "\n");
+                Utility.WriteTitle("Person Menu", "", "\n\n");
 
             } while (!status);
 
@@ -72,7 +77,7 @@ namespace E21_Collections_ListManipulation_Person
             do
             {
                 Console.Clear();
-                Utility.WriteTitle("Add position", "", "\n\n");
+                Utility.WriteTitle("Add in position", "", "\n\n");
                 Utility.WriteMessage("Digite o número da posição em que deseja inserir a pessoa.", "", "\n\n");
                 Utility.WriteMessage("Número: ");
 
@@ -99,7 +104,8 @@ namespace E21_Collections_ListManipulation_Person
             }
             else
             {
-                Utility.WriteMessage($"A lista tem {listLength} posições, insira um valor válido.", "\n", "\n");
+                Utility.WriteMessage($"As posições na lista se iniciam em índice (0).", "\n", "\n");
+                Utility.WriteMessage($"A lista tem {listLength} posições, insira um valor válido (0 a {listLength}).", "\n", "\n");
             }
         }
 
@@ -117,6 +123,84 @@ namespace E21_Collections_ListManipulation_Person
             } while (!int.TryParse(Console.ReadLine(), out result));
 
             return result;
+        }
+
+        internal static void RunProgram(List<Person> list)
+        {
+            string position;
+            string option = ShowMenu();
+
+            do
+            {
+                switch (option)
+                {
+                    case "Add person":
+                        do
+                        {
+                            Person person = new Person();
+
+                            person.AddPerson();
+
+                            list.Add(person);
+
+                        } while (KeepGoing() == "y");
+                        break;
+
+                    case "Insert person in position":
+                        do
+                        {
+                            Person person = new Person();
+
+                            person.AddPerson();
+
+                            position = CheckPosition();
+
+                            InsertInPosition(list, person, position);
+
+                        } while (KeepGoing() == "y");
+                        break;
+
+                    case "Find person by id":
+                        do
+                        {
+                            Person.FindPerson(list);
+
+                        } while (KeepGoing() == "y");
+                        break;
+
+                    case "Remove person by id":
+                        do
+                        {
+                            Person.RemovePerson(list);
+
+                        } while (KeepGoing() == "y");
+                        break;
+
+                    case "Sort list by id":
+
+                        Person.SortId(list);
+                        KeepGoing();
+                        break;
+
+                    case "Sort list by name":
+
+                        Person.SortName(list);
+                        KeepGoing();
+                        break;
+
+                    case "List person":
+
+                        Person.ListPerson(list);
+                        KeepGoing();
+                        break;
+
+                    default:
+                        break;
+                }
+
+                option = ShowMenu();
+
+            } while (option != "Exit");
         }
 
     }
