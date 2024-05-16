@@ -201,6 +201,8 @@ namespace E21_Collections_ListManipulation_Person
                 option = ShowMenu();
 
             } while (option != "Exit");
+
+            Console.Clear();
         }
 
     }
