@@ -33,8 +33,6 @@ namespace E21_Collections_ListManipulation_Person
 
             do
             {
-                
-
                 Utility.WriteMessage("Escolha o número de uma das seguintes opções: ", endMessage: "\n\n");
 
                 foreach (KeyValuePair<string, string> item in dictMenu)
@@ -82,7 +80,6 @@ namespace E21_Collections_ListManipulation_Person
                 Utility.WriteMessage("Número: ");
 
             } while (!int.TryParse(Console.ReadLine(), out result));
-
 
             return result.ToString();
         }
