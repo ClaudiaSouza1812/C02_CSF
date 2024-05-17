@@ -32,7 +32,7 @@ namespace D03_AlgoritmoPrecoFinal
 
             // 5. Calcular preço final
 
-            precoFinal = (precoInicial - (precoInicial * taxaDesconto) / 100);
+            precoFinal = precoInicial - precoInicial * taxaDesconto / 100;
 
             // 6. Mostrar resultado
 

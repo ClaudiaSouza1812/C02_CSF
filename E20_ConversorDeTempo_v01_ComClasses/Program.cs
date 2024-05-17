@@ -17,14 +17,18 @@ namespace E20_ConversorDeTempo_v01_ComClasses
             Utility.WriteTitle("Converta um valor para horas, minutos e segundos.", "", "\n\n");
 
             int value;
-            double hours, minutes, seconds;
+            int hours, finalHour, finalMinutes, finalSeconds;
 
-            Utility.WriteMessage("Insira o valor; ");
+            Utility.WriteMessage("Insira o valor em minutos: ");
             value = Convert.ToInt16(Console.ReadLine());
 
-            hours = value / 60;
-            minutes = value / 360;
-            seconds = value / 3600;
+            hours = 60;
+
+            finalHour = value / hours;
+            finalMinutes = value - (finalHour * hours);
+            finalSeconds = finalMinutes - (value - (finalHour * hours));
+
+            Utility.WriteMessage($"{finalHour:D2}:{finalMinutes:D2}:{finalSeconds:D2}");
 
             Utility.TerminateConsole();
         }
