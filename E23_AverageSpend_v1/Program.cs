@@ -15,11 +15,28 @@ namespace E23_AverageSpend_v1
 
             Utility.SetUnicodeConsole();
 
-            int firstDaySpend, totalSpend, averageSpend;
+            Utility.WriteTitle("Despesa média diária de uma viagem de quatro dias", "", "\n\n");
 
+            int DaySpend, averageSpend, totalSpend = 0;
+            bool status;
             
+            Utility.WriteMessage($"Insira a despesa do primeiro dia: ");
 
-            Utility.WriteMessage($"A despesa média diária foi de: {firstDaySpend}");
+            status = int.TryParse(Console.ReadLine(), out DaySpend);
+
+            if (status)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    Utility.WriteMessage($"{i + 1}º dia: {DaySpend}", "", "\n");
+                    totalSpend = totalSpend + DaySpend;
+                    DaySpend = DaySpend + (DaySpend * 20 / 100);
+                    
+                     
+                }
+                averageSpend = totalSpend / 4;
+                Utility.WriteMessage($"A despesa média diária foi de {averageSpend}");
+            }
 
             Utility.TerminateConsole();
         }
