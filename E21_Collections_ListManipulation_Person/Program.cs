@@ -33,7 +33,7 @@ namespace E21_Collections_ListManipulation_Person
             */
 
             List<Person> personsList = new List<Person>();
-            PersonUtility.RunProgram(personsList);
+            PersonUtility.StartPersonProgram(personsList);
 
             Utility.TerminateConsole();
         }

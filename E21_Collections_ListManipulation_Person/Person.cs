@@ -84,8 +84,6 @@ namespace E21_Collections_ListManipulation_Person
 
         internal static void ListPerson(List<Person> list)
         {
-            Console.Clear();
-
             Utility.WriteTitle("Person - List", "\n", "\n\n");
 
             foreach (Person item in list)
@@ -102,6 +100,28 @@ namespace E21_Collections_ListManipulation_Person
             Utility.WriteMessage("Name: ");
 
             Name = Console.ReadLine();
+        }
+
+        // MRS: embora não manipule diretamente as propriedades da pessoa, não deixa de ser um método de Person
+        internal static void InsertPersonInPosition(List<Person> list, Person person, string position)
+        {
+            int number = Convert.ToInt16(position);
+
+            int listLength = list.Count();
+
+            if (number == listLength)
+            {
+                list.Add(person);
+            }
+            else if (number < listLength & number >= 0)
+            {
+                list.Insert(number, person);
+            }
+            else
+            {
+                Utility.WriteMessage($"As posições na lista se iniciam em índice (0).", "\n", "\n");
+                Utility.WriteMessage($"A lista tem {listLength} posições, insira um valor válido (0 a {listLength}).", "\n", "\n");
+            }
         }
 
         internal static Person FindId(List<Person> list)
@@ -121,9 +141,10 @@ namespace E21_Collections_ListManipulation_Person
 
         internal static void FindPerson(List<Person> list)
         {
-            Person person = FindId(list);
-
+            Console.Clear();
             Utility.WriteTitle("Find person by id", "\n", "\n\n");
+
+            Person person = FindId(list);
 
             if (person != null)
             {
@@ -137,9 +158,10 @@ namespace E21_Collections_ListManipulation_Person
 
         internal static void RemovePerson(List<Person> list)
         {
-            Person person = FindId(list);
-
+            Console.Clear();
             Utility.WriteTitle("Remove person by id", "\n", "\n\n");
+
+            Person person = FindId(list);
 
             if (person != null)
             {
@@ -154,7 +176,8 @@ namespace E21_Collections_ListManipulation_Person
 
         internal static void SortId(List<Person> list)
         {
-            Utility.WriteTitle("Sort list by id", "\n", "\n\n");
+            Console.Clear();
+            Utility.WriteTitle("Sort list by id", "\n", "\n");
 
             if (list.Count() > 0)
             {
@@ -169,7 +192,8 @@ namespace E21_Collections_ListManipulation_Person
 
         internal static void SortName(List<Person> list)
         {
-            Utility.WriteTitle("Sort list by Name", "\n", "\n\n");
+            Console.Clear();
+            Utility.WriteTitle("Sort list by Name", "\n", "\n");
 
             if (list.Count() > 0)
             {
