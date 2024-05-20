@@ -42,6 +42,7 @@ namespace E21_Collections_ListManipulation_Person
 
                 Utility.WriteMessage("Opção: ", "\n");
 
+                // Tod MRS: o menu chama-se ShowMenu e no entanto tb está a fazer a leitura e a validação da escolha. Ou mudas o nome ou divides o método
                 key = Console.ReadLine();
 
                 status = dictMenu.TryGetValue(key, out choice);
@@ -84,7 +85,7 @@ namespace E21_Collections_ListManipulation_Person
             return result.ToString();
         }
 
-
+        // Todo MRS: embora não manipule diretamente as propriedades da pessoa, não deixa de ser um método de Person
         internal static void InsertInPosition(List<Person> list, Person person, string position)
         {
             int number = Convert.ToInt16(position);
@@ -122,6 +123,7 @@ namespace E21_Collections_ListManipulation_Person
             return result;
         }
 
+        // Todo MRS: os nomes dos métodos devem ser auto explicativos. Este nome não diz nada
         internal static void RunProgram(List<Person> list)
         {
             string position;
