@@ -17,42 +17,37 @@ namespace E24_Salary_v1
 
             Utility.SetUnicodeConsole();
 
-            Dictionary<string, string> values = new Dictionary<string, string>()
-            {
-                {"salary", "0" },
-                {"commission", "0" },
-                {"percentage", "0" },
-                {"sales", "0" },
-            };
+            Utility.WriteTitle("Final Salary", "", "\n\n");
 
-            
-            int carsSold, percentageValue;
-            double salesValue,commission, commissionValue, percentage, finalSalary, salary;
+            int numberCarsSold;
+            double commiPerSale = 50, percent = 0.5, salesValue, commission, percentage, salary, finalSalary;
             bool status01, status02, status03;
 
             Utility.WriteMessage("Insira o salário funcionário: ");
             status01 = double.TryParse(Console.ReadLine(), out salary);
 
             Utility.WriteMessage("Insira a quantidade de carros vendidos: ");
-            status02 = int.TryParse(Console.ReadLine(), out carsSold);
+            status02 = int.TryParse(Console.ReadLine(), out numberCarsSold);
 
+            Utility.WriteMessage("Insira a soma do valor dos carros vendidos: ");
+            status03 = double.TryParse(Console.ReadLine(), out salesValue);
 
-
-
-            commission =  carsSold * commissionValue;
-            percentage = salesValue * percentageValue;
-
-            finalSalary = salary + comm ission + percentage;
-
-            foreach (string item in values.Keys)
+            if (status01 & status02 & status03)
             {
-                Utility.WriteMessage($"Isert the {item}: ");
+                commission = numberCarsSold * commiPerSale;
+                percentage = salesValue * percent / 100;
+                finalSalary = salary + commission + percentage;
+
+                Utility.WriteMessage($"Commission: {commission:F2}.", "", "\n");
+                Utility.WriteMessage($"Percentage: {percentage:F2}.", "", "\n");
+                Utility.WriteMessage($"Salário final: {finalSalary:F2}.", "", "\n");
+            }
+            else
+            {
+                Utility.WriteMessage("Insira valores válidos.");
             }
 
-
-
-
-
+            
             Utility.TerminateConsole();
         }
     }

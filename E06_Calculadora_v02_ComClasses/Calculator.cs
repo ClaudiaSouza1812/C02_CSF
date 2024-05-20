@@ -1,5 +1,5 @@
-﻿// Todo MRS: Complicaste demasiado algo que se quer simples, embora estruturado.
-// Todo MRS: Tens de pensar melhor na responsabilidade da classe e de cada um dos métodos, antes de implementares e evitares criar métodos que não acrescentam valor ao algoritmo.
+﻿// MRS: Complicaste demasiado algo que se quer simples, embora estruturado.
+// MRS: Tens de pensar melhor na responsabilidade da classe e de cada um dos métodos, antes de implementares e evitares criar métodos que não acrescentam valor ao algoritmo.
 
 
 using D00_Utility;
@@ -27,7 +27,7 @@ namespace E06_Calculadora_v02_ComClasses
         #region Auto-implemented properties 2.0
 
         // Declarar uma propriedade usando Auto-implemented properties
-        internal string Operators { get; set; } // Todo MRS: propriedade no singular
+        internal string Operators { get; set; } // MRS: propriedade no singular
 
         #endregion
 
@@ -77,8 +77,8 @@ namespace E06_Calculadora_v02_ComClasses
 
         #region Methods (public or internal)
 
-        // Todo MRS: Uma vez que os valores estão nas propriedades, não faz sentido enviar como parameters para o método        
-        // Todo MRS: Os 4 métodos artiméticos têm a responsabilidade de gerar um resultado pelo cálculo efetuado. Logo, este método só tem a responsabilidade de os invocar, não de ficar com o resultado
+        // MRS: Uma vez que os valores estão nas propriedades, não faz sentido enviar como parameters para o método        
+        // MRS: Os 4 métodos artiméticos têm a responsabilidade de gerar um resultado pelo cálculo efetuado. Logo, este método só tem a responsabilidade de os invocar, não de ficar com o resultado
 
 
         // Método para devolver o resultado de uma operação aritmética simples
@@ -107,7 +107,7 @@ namespace E06_Calculadora_v02_ComClasses
             return result;
         }
 
-        // Todo MRS: Ontem falei desta particularidade, que seria mais eficaz criar uma propriedade adicional do resultado e usar nos métodos aritméticos
+        // MRS: Ontem falei desta particularidade, que seria mais eficaz criar uma propriedade adicional do resultado e usar nos métodos aritméticos
 
         // Método para devolver a soma de dois valores
         internal double Sum(double value01, double value02)
@@ -150,7 +150,7 @@ namespace E06_Calculadora_v02_ComClasses
             }
         }
 
-        // Todo MRS: Podes fazer este método, mas nesse caso, retira-o da classe, porque não manipula diretamente os seus dados. Vai para uma classe utilitária do Calculator
+        // MRS: Podes fazer este método, mas nesse caso, retira-o da classe, porque não manipula diretamente os seus dados. Vai para uma classe utilitária do Calculator
 
         // Método para checar e devolver um double
         internal double CheckDouble(string input, string valor)
@@ -167,7 +167,7 @@ namespace E06_Calculadora_v02_ComClasses
             return reference;
         }
 
-        // Todo MRS: Vimos isto ontem
+        // MRS: Vimos isto ontem
 
         //Método para checar e devolver um operador usando array
 
@@ -184,7 +184,7 @@ namespace E06_Calculadora_v02_ComClasses
             return input;
         }
 
-        // Todo MRS: Para quê este overload (2 versões diferentes) do método  CalculatorWriteResult()?
+        // MRS: Para quê este overload (2 versões diferentes) do método  CalculatorWriteResult()?
 
         // Método para mostrar no console o resultado de uma operação aritmética simples
         internal void CalculatorWriteResult()
@@ -200,7 +200,7 @@ namespace E06_Calculadora_v02_ComClasses
             Utility.WriteMessage($"Resultado: {Value01} {Operators} {Value02} = {result}", endMessage: "\n");
         }
 
-        // Todo MRS: Se é um método para mostrar o resultado, não devia estar a obter o resultado aqui. E mais uma vez, se as propriedades já têm valores, não devem ser enviados os parameters
+        // MRS: Se é um método para mostrar o resultado, não devia estar a obter o resultado aqui. E mais uma vez, se as propriedades já têm valores, não devem ser enviados os parameters
 
         // Método para mostrar no console o resultado de uma operação aritmética simples
         internal void CalculatorWriteResult(double value01, double value02, string operators)
@@ -216,7 +216,7 @@ namespace E06_Calculadora_v02_ComClasses
             Utility.WriteMessage($"Resultado: {value01} {operators} {value02} = {result}", endMessage: "\n");
         }
 
-        // Todo MRS: Tentar validar os valores da consola e guardar diretamente nas propriedades, em vez de andar a criar variáveis. Não esquecer que este é um exercício simples e estás a complicar.
+        // MRS: Tentar validar os valores da consola e guardar diretamente nas propriedades, em vez de andar a criar variáveis. Não esquecer que este é um exercício simples e estás a complicar.
 
         // Método para requisitar ao usuário a inserção dos dados, via console, para uma operação aritmética simples
         internal void CalculatorReadData()
@@ -230,7 +230,7 @@ namespace E06_Calculadora_v02_ComClasses
             Utility.WriteMessage("Insira os decimais usando a vírgula (,) como separador.", endMessage: "\n\n");
             Utility.WriteMessage("Insira os 2 valores desejados e um dos seguintes operadores: ", endMessage: "\n\n");
 
-            // Todo MRS: Isto devia ser um menu de escolha da operação
+            // MRS: Isto devia ser um menu de escolha da operação
 
             Utility.WriteMessage("Soma: \"+\"\nSubtração: \"-\"\nMultiplicação: \"*\"\nDivisão: \"/\"\n", endMessage: "\n");
 
