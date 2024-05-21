@@ -60,20 +60,11 @@ namespace E21_Collections_ListManipulation_Person
         }
 
 
-        internal static bool CheckInt(string option)
-        {
-            int choice;
-            bool status;
-            status = int.TryParse(option, out choice);
-            return status;
-        }
-
-
         internal static string CheckMenuChoice(Dictionary<string, string> menu, string key)
         {
             bool status;
             string choice;
-            
+
             status = menu.TryGetValue(key, out choice);
 
             if (status)
@@ -84,6 +75,15 @@ namespace E21_Collections_ListManipulation_Person
             {
                 return GetMenuChoice();
             }
+        }
+
+
+        internal static bool CheckInt(string option)
+        {
+            int choice;
+            bool status;
+            status = int.TryParse(option, out choice);
+            return status;
         }
 
 
@@ -120,7 +120,6 @@ namespace E21_Collections_ListManipulation_Person
             string answer;
             do
             {
-                
                 Utility.WriteTitle("Digite o número do ID", "", "\n\n");
                 Utility.WriteMessage("Número: ");
                 answer = Console.ReadLine();
@@ -134,7 +133,7 @@ namespace E21_Collections_ListManipulation_Person
         internal static void StartPersonProgram(List<Person> list)
         {
             Dictionary<string, string> menu = ShowMenu();
-            string key, option, position;
+            string key, option;
 
             do
             {
@@ -162,7 +161,7 @@ namespace E21_Collections_ListManipulation_Person
 
                             person.AddPerson();
 
-                            position = CheckPosition();
+                            string position = CheckPosition();
 
                             Person.InsertPersonInPosition(list, person, position);
 
@@ -204,12 +203,10 @@ namespace E21_Collections_ListManipulation_Person
                         break;
 
                     default:
+                        Utility.WriteMessage("Invalid option. Please choose a valid menu option.", "", "\n");
                         break;
                 }
-
             } while (option != "Exit");
-
         }
-
     }
 }

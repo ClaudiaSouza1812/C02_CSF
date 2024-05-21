@@ -70,7 +70,7 @@ namespace E21_Collections_ListManipulation_Person
             Name = string.Empty;
         }
 
-        // Fazer segundo construtor com inserção parâmetros obrigatórios
+        // Fazer segundo construtor com inserção de parâmetros obrigatórios
 
         internal Person(string name)
         {
@@ -128,11 +128,11 @@ namespace E21_Collections_ListManipulation_Person
         {
             int id = PersonUtility.CheckId();
 
-            foreach (Person item in list)
+            foreach (Person person in list)
             {
-                if (item.Id == id)
+                if (person.Id == id)
                 {
-                    return item;
+                    return person;
                 }
             }
 
