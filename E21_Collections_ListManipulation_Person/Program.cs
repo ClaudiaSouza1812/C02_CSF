@@ -14,6 +14,9 @@ namespace E21_Collections_ListManipulation_Person
         {
             Utility.SetUnicodeConsole();
 
+            // MRS: os nomes deviam ser pedidos na consola
+
+            /*
             List<Person> personsList = new List<Person>()
             {
                 new Person()
@@ -22,16 +25,15 @@ namespace E21_Collections_ListManipulation_Person
                 }
 
             };
-
-            /*
             Person person = new Person();
             person.Name = "Paula";
             personsList.Add(person);
 
             personsList.Add(new Person("Ana"));
             */
-            
-            PersonUtility.RunProgram(personsList);
+
+            List<Person> personsList = new List<Person>();
+            PersonUtility.StartPersonProgram(personsList);
 
             Utility.TerminateConsole();
         }

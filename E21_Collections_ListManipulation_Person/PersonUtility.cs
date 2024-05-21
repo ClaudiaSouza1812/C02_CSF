@@ -9,15 +9,14 @@ namespace E21_Collections_ListManipulation_Person
 {
     internal class PersonUtility
     {
-        internal static string ShowMenu()
+        internal static Dictionary<string, string> ShowMenu()
         {
+            // MRS: o menu chama-se ShowMenu e no entanto tb está a fazer a leitura e a validação da escolha. Ou mudas o nome ou divides o método
+
             Console.Clear();
             Utility.WriteTitle("List Manipulation - Person", "", "\n");
             Utility.WriteTitle("Person Menu", "", "\n\n");
-
-            string key;
-            bool status;
-            string choice;
+            Utility.WriteMessage("Escolha o número de uma das seguintes opções: ", endMessage: "\n\n");
 
             Dictionary<string, string> dictMenu = new Dictionary<string, string>()
             {
@@ -31,29 +30,60 @@ namespace E21_Collections_ListManipulation_Person
                 {"8", "Exit" }
             };
 
+            foreach (KeyValuePair<string, string> item in dictMenu)
+            {
+                Utility.WriteMessage($"({item.Key}) {item.Value}", "", "\n");
+            }
+
+            return dictMenu;
+        }
+
+
+        internal static string GetMenuChoice()
+        {
+            string answer;
+            bool status;
             do
             {
-                Utility.WriteMessage("Escolha o número de uma das seguintes opções: ", endMessage: "\n\n");
-
-                foreach (KeyValuePair<string, string> item in dictMenu)
-                {
-                    Utility.WriteMessage($"({item.Key}) {item.Value}", "", "\n");
-                }
-
-                Utility.WriteMessage("Opção: ", "\n");
-
-                key = Console.ReadLine();
-
-                status = dictMenu.TryGetValue(key, out choice);
-
                 Console.Clear();
 
-                Utility.WriteTitle("List Manipulation - Person", "", "\n");
-                Utility.WriteTitle("Person Menu", "", "\n\n");
+                ShowMenu();
+
+                Utility.WriteMessage("Opção: ", "\n");
+                answer = Console.ReadLine();
+
+                status = CheckInt(answer);
 
             } while (!status);
 
-            return choice;
+            return answer;
+        }
+
+
+        internal static string CheckMenuChoice(Dictionary<string, string> menu, string key)
+        {
+            bool status;
+            string choice;
+
+            status = menu.TryGetValue(key, out choice);
+
+            if (status)
+            {
+                return choice;
+            }
+            else
+            {
+                return GetMenuChoice();
+            }
+        }
+
+
+        internal static bool CheckInt(string option)
+        {
+            int choice;
+            bool status;
+            status = int.TryParse(option, out choice);
+            return status;
         }
 
 
@@ -70,65 +100,46 @@ namespace E21_Collections_ListManipulation_Person
 
         internal static string CheckPosition()
         {
-            int result;
-
+            string answer;
             do
             {
                 Console.Clear();
                 Utility.WriteTitle("Add in position", "", "\n\n");
                 Utility.WriteMessage("Digite o número da posição em que deseja inserir a pessoa.", "", "\n\n");
                 Utility.WriteMessage("Número: ");
+                answer = Console.ReadLine();
 
-            } while (!int.TryParse(Console.ReadLine(), out result));
+            } while (!CheckInt(answer));
 
-            return result.ToString();
+            return answer;
         }
 
-
-        internal static void InsertInPosition(List<Person> list, Person person, string position)
-        {
-            int number = Convert.ToInt16(position);
-
-            int listLength = list.Count();
-
-            if (number == listLength)
-            {
-                list.Add(person);
-            }
-            else if (number < listLength & number >= 0)
-            {
-                list.Insert(number, person);
-            }
-            else
-            {
-                Utility.WriteMessage($"As posições na lista se iniciam em índice (0).", "\n", "\n");
-                Utility.WriteMessage($"A lista tem {listLength} posições, insira um valor válido (0 a {listLength}).", "\n", "\n");
-            }
-        }
-
+        
         internal static int CheckId()
         {
-            int result;
-
+            string answer;
             do
             {
-                Console.Clear();
                 Utility.WriteTitle("Digite o número do ID", "", "\n\n");
                 Utility.WriteMessage("Número: ");
-                
+                answer = Console.ReadLine();
 
-            } while (!int.TryParse(Console.ReadLine(), out result));
+            } while (!CheckInt(answer));
 
-            return result;
+            return Convert.ToInt16(answer);
         }
 
-        internal static void RunProgram(List<Person> list)
+        // MRS: os nomes dos métodos devem ser auto explicativos. Este nome não diz nada
+        internal static void StartPersonProgram(List<Person> list)
         {
-            string position;
-            string option = ShowMenu();
+            Dictionary<string, string> menu = ShowMenu();
+            string key, option;
 
             do
             {
+                key = GetMenuChoice();
+                option = CheckMenuChoice(menu, key);
+
                 switch (option)
                 {
                     case "Add person":
@@ -150,9 +161,9 @@ namespace E21_Collections_ListManipulation_Person
 
                             person.AddPerson();
 
-                            position = CheckPosition();
+                            string position = CheckPosition();
 
-                            InsertInPosition(list, person, position);
+                            Person.InsertPersonInPosition(list, person, position);
 
                         } while (KeepGoing() == "y");
                         break;
@@ -192,15 +203,10 @@ namespace E21_Collections_ListManipulation_Person
                         break;
 
                     default:
+                        Utility.WriteMessage("Invalid option. Please choose a valid menu option.", "", "\n");
                         break;
                 }
-
-                option = ShowMenu();
-
             } while (option != "Exit");
-
-            Console.Clear();
         }
-
     }
 }
