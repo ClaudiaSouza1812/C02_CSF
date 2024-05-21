@@ -134,7 +134,7 @@ namespace E21_Collections_ListManipulation_Person
         internal static void StartPersonProgram(List<Person> list)
         {
             Dictionary<string, string> menu = ShowMenu();
-            string key, option, position;
+            string key, option;
 
             do
             {
@@ -162,7 +162,7 @@ namespace E21_Collections_ListManipulation_Person
 
                             person.AddPerson();
 
-                            position = CheckPosition();
+                            string position = CheckPosition();
 
                             Person.InsertPersonInPosition(list, person, position);
 
