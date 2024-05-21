@@ -103,6 +103,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E24_Salary_v1", "E24_Salary
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E25_ChangeValues_v1", "E25_ChangeValues_v1\E25_ChangeValues_v1.csproj", "{6E2E349D-9BE9-4450-90E6-DFC0289AAFB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E26_AntecessorSucessor_v1", "E26_AntecessorSucessor_v1\E26_AntecessorSucessor_v1.csproj", "{B07A86DC-AD79-4E6B-BCAF-ABF2D84FC7CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -309,6 +311,10 @@ Global
 		{6E2E349D-9BE9-4450-90E6-DFC0289AAFB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E2E349D-9BE9-4450-90E6-DFC0289AAFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E2E349D-9BE9-4450-90E6-DFC0289AAFB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B07A86DC-AD79-4E6B-BCAF-ABF2D84FC7CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07A86DC-AD79-4E6B-BCAF-ABF2D84FC7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07A86DC-AD79-4E6B-BCAF-ABF2D84FC7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07A86DC-AD79-4E6B-BCAF-ABF2D84FC7CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

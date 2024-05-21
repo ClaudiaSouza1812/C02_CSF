@@ -17,7 +17,6 @@ namespace E25_ChangeValues_v1
 
             Utility.SetUnicodeConsole();
 
-            int a, b;
             bool status01, status02;
 
             do
@@ -26,10 +25,10 @@ namespace E25_ChangeValues_v1
                 Utility.WriteTitle("Trocar entre si o valor contido em duas variáveis inteiras (a) e (b)", "", "\n\n");
 
                 Utility.WriteMessage("Insert the value of (a): ", "", "\n");
-                status01 = int.TryParse(Console.ReadLine(), out a);
+                status01 = int.TryParse(Console.ReadLine(), out int a);
 
                 Utility.WriteMessage("Insert the value of (b): ", "", "\n");
-                status02 = int.TryParse(Console.ReadLine(), out b);
+                status02 = int.TryParse(Console.ReadLine(), out int b);
 
                 if (status01 & status02)
                 {
@@ -39,9 +38,10 @@ namespace E25_ChangeValues_v1
                 else
                 {
                     Utility.WriteMessage("Insira números inteiros.", "", "\n");
+                    Utility.PauseConsole();
                 }
 
-            } while (!status01 & !status02);
+            } while (!status01 || !status02);
             
 
             Utility.TerminateConsole();
