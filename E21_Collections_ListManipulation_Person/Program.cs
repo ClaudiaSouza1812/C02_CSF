@@ -12,10 +12,8 @@ namespace E21_Collections_ListManipulation_Person
     {
         static void Main(string[] args)
         {
-            Utility.SetUnicodeConsole();
-
-            // MRS: os nomes deviam ser pedidos na consola
-
+            Utility.SetUnicodeConsole();        
+            
             /*
             List<Person> personsList = new List<Person>()
             {
