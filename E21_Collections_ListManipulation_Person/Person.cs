@@ -102,7 +102,6 @@ namespace E21_Collections_ListManipulation_Person
             Name = Console.ReadLine();
         }
 
-        // MRS: embora não manipule diretamente as propriedades da pessoa, não deixa de ser um método de Person
         internal static void InsertPersonInPosition(List<Person> list, Person person, string position)
         {
             int number = Convert.ToInt16(position);
