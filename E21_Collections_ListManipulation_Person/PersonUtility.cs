@@ -11,8 +11,7 @@ namespace E21_Collections_ListManipulation_Person
     {
         internal static Dictionary<string, string> ShowMenu()
         {
-            // MRS: o menu chama-se ShowMenu e no entanto tb está a fazer a leitura e a validação da escolha. Ou mudas o nome ou divides o método
-
+           
             Console.Clear();
             Utility.WriteTitle("List Manipulation - Person", "", "\n");
             Utility.WriteTitle("Person Menu", "", "\n\n");
@@ -129,8 +128,7 @@ namespace E21_Collections_ListManipulation_Person
             return Convert.ToInt16(answer);
         }
 
-        // MRS: os nomes dos métodos devem ser auto explicativos. Este nome não diz nada
-        internal static void StartPersonProgram(List<Person> list)
+         internal static void StartPersonProgram(List<Person> list)
         {
             Dictionary<string, string> menu = ShowMenu();
             string key, option;
